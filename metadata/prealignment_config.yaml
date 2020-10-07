@@ -1,0 +1,25 @@
+name: prealignments
+
+pep_version: 2.0.0
+sample_table: prealignment_sample_table.csv
+
+looper:
+  output_dir: "$PROCESSED/pepatac/prealignment_comparison/yes"
+  pipeline_interfaces: ["$CODE/pepatac/project_pipeline_interface.yaml"]
+
+sample_modifiers:
+  append:
+    pipeline_interfaces: ["$CODE/pepatac/sample_pipeline_interface.yaml"]
+  derive:
+    attributes: [read1, read2]
+    sources:
+      FQ1: ${DATA}/{sample_name}_r1.fastq.gz
+      FQ2: ${DATA}/{sample_name}_r2.fastq.gz
+  imply:
+    - if: 
+        organism: ["human", "Homo sapiens", "Human", "Homo_sapiens"]
+      then: 
+        genome: hg38
+        macs_genome_size: hs
+        prealignments: rCRSd
+        

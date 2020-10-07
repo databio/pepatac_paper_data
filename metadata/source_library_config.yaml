@@ -1,0 +1,24 @@
+name: source
+
+pep_version: 2.0.0
+sample_table: "source_library_annotation.csv" 
+
+looper:  
+  output_dir: "$PROCESSED/pepatac/source_libraries" 
+  pipeline_interfaces: ["$CODE/pepatac/project_pipeline_interface.yaml"]
+
+sample_modifiers:
+  append:
+    pipeline_interfaces: ["$CODE/pepatac/sample_pipeline_interface.yaml"]
+  derive:
+    attributes: [read1, read2]
+    sources:
+      SRA_1: "$SRAFQ/{SRR}_1.fastq.gz"
+      SRA_2: "$SRAFQ/{SRR}_2.fastq.gz"
+  imply:
+    - if: 
+        organism: ["human", "Homo sapiens", "Human", "Homo_sapiens"]
+      then: 
+        genome: hg38
+        macs_genome_size: hs
+        prealignments: rCRSd
