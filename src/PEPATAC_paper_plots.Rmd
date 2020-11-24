@@ -1,0 +1,806 @@
+---
+title: "PEPATAC_paper_plots"
+author: "Jason Smith"
+date: "10/01/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Getting started
+
+This document will walk you through producing all the plots used in the PEPATAC paper itself. Right off the bat, let's make sure we have all the R packages necessary to produce these plots.
+
+```{r load_packages}
+required_libraries <- c("data.table", "ggplot2", "ggpubr", "rstatix", "ggpmisc",
+                        "gridExtra", "tidyverse")
+for (i in required_libraries) {
+    loadLibrary <- tryCatch (
+        {
+            suppressPackageStartupMessages(
+                suppressWarnings(library(i, character.only=TRUE)))
+        },
+        error=function(e) {
+            message("Error: Install the \"", i,
+                    "\" library before proceeding.")
+            return(NULL)
+        },
+        warning=function(e) {
+            message(e)
+            return(1)
+        }
+    )
+    if (length(loadLibrary)!=0) {
+        suppressWarnings(library(i, character.only=TRUE))
+    } else {
+        quit()
+    }
+}
+```
+
+## Establish helpful functions
+
+Here we're creating our plotting functions we wish to call several times
+
+```{r functions, echo=FALSE}
+theme_PEPATAC <- function(base_family = "sans", ...){
+  theme_classic(base_family = base_family, base_size = 14, ...) +
+  theme(
+    axis.line = element_line(size = 0.5),
+    axis.text.x = element_text(angle = 0, hjust = 0.5, vjust=0.5),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.background = element_rect(fill = "transparent"),
+    plot.background = element_rect(fill = "transparent", color = NA),
+    legend.background = element_rect(fill = "transparent", color = NA),
+    legend.box.background = element_rect(fill = "transparent", color = NA),
+    aspect.ratio = 1,
+    plot.title = element_text(hjust = 0.5),
+    panel.border = element_rect(colour = "black", fill=NA, size=0.5)
+  )
+}
+
+plotDiff <- function(data, x, y, xlab, ylab, stat.test) {
+    ggplot(data, aes_string(x, y)) +
+    geom_violin(alpha=.6, width=.5, aes_string(fill=x)) + 
+    geom_boxplot(outlier.shape=NA, width=.5,
+                 alpha=0, aes_string(fill=x)) +
+    geom_point(aes_string(color=x),
+               position=position_jitterdodge(jitter.width=0.75), alpha=.3) +
+    labs(x = xlab, y = ylab) +
+    stat_pvalue_manual(stat.test, hide.ns = TRUE,
+                       alpha=0.75, bracket.nudge.y=1) +
+    theme_PEPATAC()
+}
+
+plotBA <- function(data, before, after,
+                   xlab, ylab, stat.test,
+                   segment_color="library_protocol") {
+    ggplot(data) + 
+    geom_segment(aes_string(x = 1, xend = 2, y = before,
+                            yend = after, col=segment_color)) + 
+    geom_segment(data = data,
+                 aes_string(x=1, xend=2, y = mean(before),
+                 yend = mean(after)), col='darkgray', size=2) +
+    stat_pvalue_manual(stat.test, hide.ns = TRUE, alpha=0.75) +
+    scale_x_discrete(
+        breaks = c("1", "2"),
+        labels = c("No", "Yes"),
+        limits = c(1, 2)
+    ) + 
+    labs(x = xlab, y = ylab) +
+    theme_PEPATAC()
+}
+
+plotFRiP <- function(data, x, y, xlab, ylab, stat.test) {
+    ggplot(data, aes_string(x, y)) +
+    geom_violin(alpha=.6, width=.5, aes_string(fill=x)) + 
+    geom_boxplot(outlier.shape=NA, width=.5, alpha=0,
+                 aes_string(fill=x)) +
+    geom_point(aes_string(color=x),
+               position=position_jitterdodge(jitter.width=0.75), alpha=.3) +
+    labs(x = xlab, y = ylab) +
+    stat_pvalue_manual(stat.test, hide.ns = TRUE, alpha=0.75) +
+    theme_PEPATAC()
+}
+
+```
+
+## Load the data
+
+We'll be using the pipeline summary statistics to generate several plots. First off, let's load those statistics and do some intial processing.
+
+```{r load_data}
+pre    <- fread('prealignments_stats_summary.tsv')
+no_pre <- fread('no_prealignments_stats_summary.tsv')
+
+colnames(pre) <- c("sample_name", "srr", "protocol", "read_type", "read1",
+                   "read2", "organism", "protocol_type", "gsm_accession",
+                   "cell_line_or_source", "cell_type", "Raw_reads",
+                   "Fastq_reads", "Trimmed_reads", "Trim_loss_rate",
+                   "Mapped_reads", "QC_filtered_reads", "Aligned_reads",
+                   "Alignment_rate", "Total_efficiency", "Mitochondrial_reads",
+                   "NRF", "PBC1", "PBC2", "Unmapped_reads", "Duplicate_reads",
+                   "Dedup_aligned_reads", "Dedup_alignment_rate",
+                   "Dedup_total_efficiency", "Read_length", "Genome_size",
+                   "Frac_exp_unique_at_10M", "TSS_score", "Peak_count", "FRiP",
+                   "File_mb", "Read_type", "Genome",
+                   "Aligned_reads_human_repeats",
+                   "Alignment_rate_human_repeats", "Aligned_reads_rCRSd",
+                   "Alignment_rate_rCRSd", "FRiP_ref", "Time", "Success")
+pre$method <- "pre"
+
+colnames(no_pre) <- c("sample_name", "srr", "protocol", "read_type", "read1",
+                      "read2", "organism", "protocol_type", "gsm_accession",
+                      "cell_line_or_source", "cell_type", "Raw_reads",
+                      "Fastq_reads", "Trimmed_reads", "Trim_loss_rate",
+                      "Mapped_reads", "QC_filtered_reads", "Aligned_reads",
+                      "Alignment_rate", "Total_efficiency",
+                      "Mitochondrial_reads", "NRF", "PBC1", "PBC2",
+                      "Unmapped_reads", "Duplicate_reads",
+                      "Dedup_aligned_reads", "Dedup_alignment_rate",
+                      "Dedup_total_efficiency", "Read_length", "Genome_size",
+                      "Frac_exp_unique_at_10M", "TSS_score", "Peak_count",
+                      "FRiP", "File_mb", "Read_type", "Genome", "FRiP_ref",
+                      "Time", "Success")
+no_pre$method <- "no-pre"
+
+stats <- plyr::rbind.fill(pre, no_pre)
+
+stats$protocol_type <- ordered(stats$protocol_type,
+    levels = c("Standard-ATAC", "Fast-ATAC", "Omni-ATAC"))
+
+stats$method <- ordered(stats$method, levels = c("pre", "no-pre"))
+```
+
+From our initial data table, we'll produce several additional tables for downstream plotting. Here we want to analyze alignment statistics, so we'll organize some tables to focus on those.
+
+```{r read_tables}
+t <- data.table(sample_name=rep(stats$sample_name, times=12),
+                method=rep(stats$method, times=12),
+                organism=rep(stats$organism, times=12),
+                library_protocol=rep(stats$protocol_type, times=12),
+                type=rep(c("Raw_reads", "Fastq_reads", "Trimmed_reads",
+                           "Mapped_reads", "QC_filtered_reads", "Aligned_reads",
+                           "Unmapped_reads", "Duplicate_reads",
+                           "Dedup_aligned_reads", "Aligned_reads_human_repeats",
+                           "Aligned_reads_rCRSd", "Mitochondrial_reads"),
+                         each=nrow(stats)))
+t$reads <- c(stats$Raw_reads, stats$Fastq_reads, stats$Trimmed_reads,
+             stats$Mapped_reads, stats$QC_filtered_reads, stats$Aligned_reads,
+             stats$Unmapped_reads, stats$Duplicate_reads,
+             stats$Dedup_aligned_reads, stats$Aligned_reads_human_repeats,
+             stats$Aligned_reads_rCRSd, stats$Mitochondrial_reads)
+
+# Replace NA with 0
+t[is.na(t)] <- 0
+
+t$pct_aligned <- 100*(t$reads/t$reads[t$type == "Raw_reads"])
+
+total <- data.table(sample_name=stats$sample_name,
+    method=stats$method,
+    organism=stats$organism,
+    library_protocol=stats$protocol_type,
+    type="Total_aligned_reads",
+    reads=(t[t$type == "Aligned_reads", reads] +
+           t[t$type == "Aligned_reads_human_repeats", reads] +
+           t[t$type == "Aligned_reads_rCRSd", reads]),
+    pct_aligned=100*((t[t$type == "Aligned_reads", reads] +
+                      t[t$type == "Aligned_reads_human_repeats", reads] +
+                      t[t$type == "Aligned_reads_rCRSd", reads])/
+                      t[t$type == "Raw_reads", reads]))
+
+t2 <- rbind(t, total)
+t2$method <- ordered(t2$method, levels = c("pre", "no-pre"))
+
+# add a total mitochondrial aligned reads just like this
+mtDNA <- data.table(sample_name=stats$sample_name,
+    method=stats$method,
+    organism=stats$organism,
+    library_protocol=stats$protocol_type,
+    type="Total_mtDNA_reads",
+    reads=(t[t$type == "Aligned_reads_rCRSd", reads] +
+           t[t$type == "Mitochondrial_reads", reads]),
+    pct_aligned=100*((t[t$type == "Aligned_reads_rCRSd", reads] +
+                      t[t$type == "Mitochondrial_reads", reads])/
+                      t[t$type == "Raw_reads", reads]))
+
+t3 <- rbind(t2, mtDNA)
+t3$method <- ordered(t3$method, levels = c("pre", "no-pre"))
+```
+
+Add all reads together to show 100% total (should match raw_reads total)
+
+```{r all_reads}
+allReads <- data.table(
+    sample_name=stats$sample_name,
+    method=stats$method,
+    organism=stats$organism,
+    library_protocol=stats$protocol_type,
+    type="Summed_reads",
+    reads=(t[t$type == "Aligned_reads_rCRSd", reads] +
+           t[t$type == "Aligned_reads_human_repeats", reads] +
+           t[t$type == "Aligned_reads", reads] +
+           t[t$type == "QC_filtered_reads", reads] +
+           t[t$type == "Unmapped_reads", reads] +
+           (t[t$type == "Raw_reads", reads] -
+            t[t$type == "Trimmed_reads", reads]) ),
+    pct_aligned=100*((t[t$type == "Aligned_reads_rCRSd", reads] +
+                      t[t$type == "Aligned_reads_human_repeats", reads] +
+                      t[t$type == "Aligned_reads", reads] +
+                      t[t$type == "QC_filtered_reads", reads] +
+                      t[t$type == "Unmapped_reads", reads] +
+                      (t[t$type == "Raw_reads", reads] -
+                       t[t$type == "Trimmed_reads", reads]) )/
+                      t[t$type == "Raw_reads", reads])
+)
+t4 <- rbind(t3, allReads)
+t4$method <- ordered(t4$method, levels = c("pre", "no-pre"))
+t5 <- t4[t4$type == "Total_mtDNA_reads"]
+
+mtDNA_pre_no_pre <- data.table(
+    sample_name = t5[method == "pre"]$sample_name,
+    method = "pre",
+    organism = t5[method == "pre"]$organism,
+    library_protocol = t5[method == "pre"]$library_protocol,
+    type = "Total_mtDNA_reads",
+    reads = t5[method == "pre"]$reads,
+    pct_aligned = t5[method == "pre"]$pct_aligned,
+    diff = t5[method == "pre"]$pct_aligned - t5[method == "no-pre"]$pct_aligned
+)
+mtDNA_pre_no_pre$library_protocol <- ordered(
+    mtDNA_pre_no_pre$library_protocol,
+    levels = c("Standard-ATAC", "Fast-ATAC", "Omni-ATAC"))
+```
+
+## Plot differences in mitochondrial read alignment
+
+First up, we'll plot the difference in the percentage of reads aligned to mitochondrial sequence between samples processed using prealignments versus those without.
+
+```{r plot_alignments}
+stat.test <- mtDNA_pre_no_pre %>%
+    group_by(library_protocol) %>%
+    t_test(data=., diff ~ 1, mu=0, p.adjust.method = "BH") %>%
+    add_xy_position(x = "library_protocol")
+
+stat.test$p <- replace(stat.test$p, stat.test$p<0.001,"**")
+
+mtDNA_diff_plot <- plotDiff(data=mtDNA_pre_no_pre,
+    x="library_protocol", y="diff",
+    xlab="Sample Protocol",
+    ylab=expression(atop("Difference in mtDNA", "Aligned Reads (%)")),
+    stat.test)
+plot(mtDNA_diff_plot + theme(legend.position = "none",
+                             axis.text.x = element_text(vjust=1.5)) +
+     scale_x_discrete(labels=c("Standard", "Fast", "Omni")))
+
+# Let's confirm prealignments always improves mtDNA alignment rates
+message(paste0("Number of samples where prealignments reduced ",
+               "mtDNA alignment rates: ", nrow(mtDNA_pre_no_pre[diff < 0,])))
+
+svg("PEPATAC_Figure5d.svg")
+mtDNA_diff_plot +
+    theme(legend.position = "none",
+          axis.text.x = element_text(vjust=1.5)) +
+    scale_x_discrete(labels=c("Standard", "Fast", "Omni"))
+dev.off()
+```
+
+To emphasize this difference, let's show how each sample compares when using prealignments or not. First, let's create a separate data table that we'll use to create these plots.
+
+```{r mtDNA_before_after}
+t6 <- t5[method == "pre" | method == "no-pre"]
+t6$library_protocol <- ordered(t6$library_protocol,
+    levels = c("Standard-ATAC", "Fast-ATAC", "Omni-ATAC"))
+                               
+ba <- data.table(
+    sample_name=t6[method == "no-pre"]$sample_name,
+    library_protocol=t6[method == "no-pre"]$library_protocol,
+    before_reads=t6[method == "no-pre"]$reads,
+    before_pct_aligned=t6[method == "no-pre"]$pct_aligned,
+    after_reads=t6[method == "pre"]$reads,
+    after_pct_aligned=t6[method == "pre"]$pct_aligned,
+    diff=(t6[method == "pre"]$pct_aligned - t6[method == "no-pre"]$pct_aligned))
+
+# Divide by 1M
+ba$before_reads <- ba$before_reads/1000000
+ba$after_reads  <- ba$after_reads/1000000
+
+standard <- ba[library_protocol == "Standard-ATAC",]
+fast <- ba[library_protocol == "Fast-ATAC",]
+omni <- ba[library_protocol == "Omni-ATAC",]
+```
+
+Then, we'll plot the before and after prealignments comparison for the Standard-ATAC samples.
+```{r standard_ba}
+# Drop outliers
+standard <- standard[!(before_reads %in% boxplot.stats(standard$before_reads)$out),]
+
+stat.test <- standard %>%
+    t_test(data=., diff ~ 1, mu=0, p.adjust.method = "BH") %>%
+    add_xy_position(x = "library_protocol")
+
+stat.test$y.position <- 80
+stat.test$p <- replace(stat.test$p, stat.test$p<0.001,"**")
+
+standard_mtDNA_beforeAfter <- plotBA(standard,
+                                     before="before_reads",
+                                     after="after_reads",
+                                     xlab="Prealignments",
+                                     ylab="mtDNA Reads (M)",
+                                     stat.test)
+plot(standard_mtDNA_beforeAfter +
+     theme(legend.position = "none",
+           axis.text.x = element_text(vjust=1.5)) +
+     ggtitle("Standard"))
+
+svg("PEPATAC_Figure5e_i.svg")
+standard_mtDNA_beforeAfter +
+    theme(legend.position = "none",
+          axis.text.x = element_text(vjust=1.5)) +
+    ggtitle("Standard")
+dev.off()
+```
+
+Next, the before and after prealignments comparison for the Fast-ATAC samples.
+```{r fast_ba}
+# Drop outliers
+fast <- fast[!(before_reads %in% boxplot.stats(fast$before_reads)$out),]
+
+stat.test <- fast %>%
+    t_test(data=., diff ~ 1, mu=0, p.adjust.method = "BH") %>%
+    add_xy_position(x = "library_protocol")
+
+stat.test$y.position <- 7
+stat.test$p <- replace(stat.test$p, stat.test$p<0.001,"**")
+
+fast_mtDNA_beforeAfter <- plotBA(fast,
+                                 before="before_reads",
+                                 after="after_reads",
+                                 xlab="Prealignments",
+                                 ylab="mtDNA Reads (M)",
+                                 stat.test)
+plot(fast_mtDNA_beforeAfter +
+     scale_color_manual(values = c("darkcyan")) +
+     theme(legend.position = "none",
+           axis.text.x = element_text(vjust=1.5)) +
+     ggtitle("Fast"))
+
+svg("PEPATAC_Figure5e_ii.svg")
+fast_mtDNA_beforeAfter +
+    scale_color_manual(values = c("darkcyan")) +
+    theme(legend.position = "none",
+          axis.text.x = element_text(vjust=1.5)) +
+    ggtitle("Fast")
+dev.off()
+```
+Finally, the before and after prealignments comparison for the Omni-ATAC samples.
+```{r omni_ba}
+# Drop outliers
+omni <- omni[!(before_reads %in% boxplot.stats(omni$before_reads)$out),]
+
+stat.test <- omni %>%
+    t_test(data=., diff ~ 1, mu=0, p.adjust.method = "BH") %>%
+    add_xy_position(x = "library_protocol")
+
+stat.test$y.position <- 1.5
+stat.test$p <- replace(stat.test$p, stat.test$p<0.001,"**")
+
+omni_mtDNA_beforeAfter <- plotBA(omni,
+                                 before="before_reads",
+                                 after="after_reads",
+                                 xlab="Prealignments",
+                                 ylab="mtDNA Reads (M)",
+                                 stat.test)
+plot(omni_mtDNA_beforeAfter +
+     scale_color_manual(values = c("yellow")) +
+     theme(legend.position = "none",
+           axis.text.x = element_text(vjust=1.5)) +
+     ggtitle("Omni"))
+
+svg("PEPATAC_Figure5e_iii.svg")
+omni_mtDNA_beforeAfter +
+    scale_color_manual(values = c("yellow")) +
+    theme(legend.position = "none",
+          axis.text.x = element_text(vjust=1.5)) +
+    ggtitle("Omni")
+dev.off()
+```
+
+## Plot differences in alignment rates
+
+Here we show how using prealignments versus not affects how many reads are able to be aligned successfully. 
+
+```{r organize_alignment_rates}
+# Primary aligned reads
+AR_pre_no_pre <- data.table(
+    sample_name = stats[stats$method == "pre",]$sample_name,
+    organism = stats[stats$method == "pre",]$organism,
+    protocol_type = stats[stats$method == "pre",]$protocol_type,
+    Aligned_reads = stats[stats$method == "pre",]$Aligned_reads,
+    Alignment_rate = stats[stats$method == "pre",]$Alignment_rate,
+    diff = (stats[stats$method == "pre",]$Alignment_rate -
+            stats[stats$method == "no-pre",]$Alignment_rate)
+)
+
+# Total aligned reads
+TAR_pre_no_pre <- data.table(
+    sample_name = t2[method == "pre" & type == "Total_aligned_reads"]$sample_name,
+    organism = t2[method == "pre" & type == "Total_aligned_reads"]$organism,
+    protocol_type = t2[method == "pre" & type == "Total_aligned_reads"]$library_protocol,
+    Aligned_reads = t2[method == "pre" & type == "Total_aligned_reads"]$reads,
+    Alignment_rate = t2[method == "pre" & type == "Total_aligned_reads"]$pct_aligned,
+    diff = (t2[method == "pre" & type == "Total_aligned_reads"]$pct_aligned - 
+            t2[method == "no-pre" & type == "Total_aligned_reads"]$pct_aligned)
+)
+```
+
+Then we can plot the differences in primary (nuclear) genome aligned reads.
+
+```{r primary_alignment_rates}
+stat.test <- AR_pre_no_pre %>%
+    group_by(protocol_type) %>%
+    t_test(data=., diff ~ 1, mu=0, p.adjust.method = "BH") %>%
+    add_xy_position(x = "protocol_type")
+
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.001,"**")
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.01,"*")
+
+AR_diff_plot <- plotDiff(data=AR_pre_no_pre,
+    x="protocol_type", y="diff",
+    xlab="Sample Protocol",
+    ylab=expression(atop("Difference in Primary", "Aligned Reads (%)")),
+    stat.test)
+plot(AR_diff_plot +
+     theme(legend.position = "none",
+           axis.text.x = element_text(vjust=1.5)) +
+     scale_x_discrete(labels=c("Standard", "Fast", "Omni")) +
+     scale_y_continuous(breaks=c(25, 0, -25, -50), labels=c(25, 0, -25, -50)) +    
+     coord_cartesian(ylim=c(-75,35)))
+
+svg("PEPATAC_Figure6a.svg")
+AR_diff_plot +
+    theme(legend.position = "none",
+          axis.text.x = element_text(vjust=1.5)) +
+    scale_x_discrete(labels=c("Standard", "Fast", "Omni")) +
+    scale_y_continuous(breaks=c(25, 0, -25, -50), labels=c(25, 0, -25, -50)) +    
+    coord_cartesian(ylim=c(-75,35))
+dev.off()
+```
+
+Finally, we can plot the differences in total (prealignment and nuclear) genome aligned reads.
+
+```{r total_alignment_rates}
+stat.test <- TAR_pre_no_pre %>%
+    group_by(protocol_type) %>%
+    t_test(data=., diff ~ 1, mu=0, p.adjust.method = "BH") %>%
+    add_xy_position(x = "protocol_type")
+
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.001,"**")
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.01,"*")
+
+TAR_diff_plot <- plotDiff(data=TAR_pre_no_pre,
+    x="protocol_type", y="diff",
+    xlab="Sample Protocol",
+    ylab=expression(atop("Difference in Total", "Aligned Reads (%)")),
+    stat.test)
+plot(TAR_diff_plot +
+     theme(legend.position = "none",
+           axis.text.x = element_text(vjust=1.5)) +
+     scale_x_discrete(labels=c("Standard", "Fast", "Omni")) +
+     scale_y_continuous(breaks=c(40, 20, 0, -20), labels=c(40, 20, 0, -20)) +    
+     coord_cartesian(ylim=c(-25,45)))
+
+svg("PEPATAC_Figure6c.svg")
+TAR_diff_plot +
+    theme(legend.position = "none",
+          axis.text.x = element_text(vjust=1.5)) +
+    scale_x_discrete(labels=c("Standard", "Fast", "Omni")) +
+    scale_y_continuous(breaks=c(40, 20, 0, -20), labels=c(40, 20, 0, -20)) +    
+    coord_cartesian(ylim=c(-25,45))
+dev.off()
+```
+
+
+## Plot differences in the fraction of reads in peaks (FRiP)
+
+Here we show how the FRiP metric is highly dependent on mapping strategy. Initially we will curate our statistics to generate a functional table for plotting.
+
+```{r frip_tables}
+FRiP_diff <- data.table(
+    sample_name = stats[stats$method == "pre", ]$sample_name,
+    organism = stats[stats$method == "pre", ]$organism,
+    library_protocol = stats[stats$method == "pre", ]$protocol_type,
+    type = "FRiP",
+    none_FRiP = stats[stats$method == "no-pre", ]$FRiP,
+    pre_FRiP = stats[stats$method == "pre", ]$FRiP,
+    diff = (stats[stats$method == "pre", ]$FRiP -
+            stats[stats$method == "no-pre", ]$FRiP)
+)
+
+FRiP_diff$library_protocol <- ordered(FRiP_diff$library_protocol,
+    levels = c("Standard-ATAC", "Fast-ATAC", "Omni-ATAC"))
+
+message(paste0("Number of samples where prealignments worsened FRiP: ",
+        nrow(FRiP_diff[diff < 0,])))
+
+# Drop samples without library protocol
+FRiP_diff <- FRiP_diff[complete.cases(FRiP_diff), ]
+# Drop outliers
+FRiP_diff <- FRiP_diff[!(diff %in% boxplot.stats(FRiP_diff$diff)$out),]
+FRiP_diff <- FRiP_diff[!(none_FRiP == 0 & pre_FRiP != 0),]
+FRiP_diff <- FRiP_diff[!(pre_FRiP == 0 & none_FRiP != 0),]
+
+### Default FRiP before and after plot (standard, fast, omni)
+standard <- FRiP_diff[library_protocol == "Standard-ATAC",]
+fast     <- FRiP_diff[library_protocol == "Fast-ATAC",]
+omni     <- FRiP_diff[library_protocol == "Omni-ATAC",]
+
+total_FRiP_diff <- data.table(
+    sample_name = stats[stats$method == "pre", ]$sample_name,
+    organism = stats[stats$method == "pre", ]$organism,
+    library_protocol = stats[stats$method == "pre", ]$protocol_type,
+    type = "FRiP",
+    none_FRiP = stats[stats$method == "no-pre", ]$FRiP,
+    pre_FRiP = ((stats[stats$method == "pre", ]$FRiP *
+                 stats[stats$method == "pre", ]$Aligned_reads)/
+                 (stats[stats$method == "pre", ]$Aligned_reads +
+                  stats[stats$method == "pre", ]$Aligned_reads_human_repeats +
+                  stats[stats$method == "pre", ]$Aligned_reads_rCRSd)
+               )
+)
+
+total_FRiP_diff$diff <- (total_FRiP_diff$pre_FRiP - total_FRiP_diff$none_FRiP)
+
+# Drop samples without library protocol
+total_FRiP_diff <- total_FRiP_diff[complete.cases(total_FRiP_diff), ]
+
+# Drop outliers
+total_FRiP_diff <- total_FRiP_diff[!(diff %in%
+    boxplot.stats(total_FRiP_diff$diff)$out),]
+total_FRiP_diff <- total_FRiP_diff[!(none_FRiP == 0 & pre_FRiP != 0),]
+total_FRiP_diff <- total_FRiP_diff[!(pre_FRiP == 0 & none_FRiP != 0),]
+
+
+total_standard <- total_FRiP_diff[library_protocol == "Standard-ATAC",]
+total_fast     <- total_FRiP_diff[library_protocol == "Fast-ATAC",]
+total_omni     <- total_FRiP_diff[library_protocol == "Omni-ATAC",]
+```
+
+Now let's generate the related figures. These figures make up panels b) and d) of Figure 6 in the paper.
+
+```{r frip_plots}
+stat.test <- FRiP_diff %>%
+    group_by(library_protocol) %>%
+    t_test(data=., diff ~ 1, mu=0, p.adjust.method = "BH") %>%
+    add_xy_position(x = "library_protocol")
+
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.001,"**")
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.01,"*")
+    
+# This uses FRiP where the denominator is "Aligned_reads"
+FRiP_diff_plot <- plotFRiP(FRiP_diff,
+                           x="library_protocol", y="diff",
+                           xlab="Sample Protocol",
+                           ylab=expression(atop(NA, atop(
+                               textstyle("FRiP Difference"),
+                               textstyle("(Primary Aligned Reads)")))),
+                           stat.test)
+plot(FRiP_diff_plot +
+         theme(legend.position = "none",
+               axis.text.x = element_text(vjust=1.5)) +
+         scale_x_discrete(labels=c("Standard","Fast","Omni")))
+ 
+svg("PEPATAC_Figure6b.svg")
+FRiP_diff_plot +
+    theme(legend.position = "none",
+          axis.text.x = element_text(vjust=1.5)) +
+    scale_x_discrete(labels=c("Standard","Fast","Omni"))
+dev.off()
+```
+
+```{r total_frip_plots}
+stat.test <- total_FRiP_diff %>%
+    group_by(library_protocol) %>%
+    t_test(data=., diff ~ 1, mu=0, p.adjust.method = "BH") %>%
+    add_xy_position(x = "library_protocol")
+
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.001,"**")
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.01,"*")
+    
+# This uses FRiP where the denominator is "Aligned_reads"
+total_FRiP_diff_plot <- plotFRiP(total_FRiP_diff,
+                           x="library_protocol", y="diff",
+                           xlab="Sample Protocol",
+                           ylab=expression(atop(NA, atop(
+                               textstyle("FRiP Difference"),
+                               textstyle("(Total Aligned Reads)")))),
+                           stat.test)
+plot(total_FRiP_diff_plot +
+         theme(legend.position = "none",
+               axis.text.x = element_text(vjust=1.5)) +
+         scale_x_discrete(labels=c("Standard","Fast","Omni")))
+ 
+svg("PEPATAC_Figure6d.svg")
+total_FRiP_diff_plot +
+    theme(legend.position = "none",
+          axis.text.x = element_text(vjust=1.5)) +
+    scale_x_discrete(labels=c("Standard","Fast","Omni"))
+dev.off()
+```
+
+We also want to evaluate the relationship between FRiP and the number of peaks as historically reported in ChIP-seq data.
+
+```{r frip_peaks_data}
+peak_frip <- data.table(
+    sample_name=stats$sample_name,
+    protocol_type=stats$protocol_type,
+    method=stats$method,
+    organism=stats$organism,
+    FRiP=stats$FRiP,
+    FRiP_ref=stats$FRiP_ref,
+    peak_count=stats$Peak_count
+)
+
+peak_frip <- peak_frip[complete.cases(peak_frip),]
+pre       <- peak_frip[method == "pre",]
+no_pre    <- peak_frip[method == "no-pre",]
+```
+
+```{r frip_peaks_plot}
+pre_no_outliers <- pre[!pre$FRiP %in% boxplot.stats(pre$FRiP)$out,]
+stat.test <- pre_no_outliers %>%
+    group_by(protocol_type) %>%
+    cor_test(peak_count, FRiP, method = "kendall")
+
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.001,"**")
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.01,"*")
+
+pre_FRiP_peaks_plot <- ggplot(data=pre_no_outliers,
+    aes(x=peak_count/1000, y=FRiP, color=protocol_type, group=protocol_type)) +
+    geom_point(alpha=.3) +
+    geom_smooth(method = "lm", fill = NA) +
+    stat_poly_eq(formula = "y ~ x", 
+                 aes(label = paste(..eq.label.., ..rr.label.., sep = "~~~")), 
+                 parse = TRUE) +
+    labs(x="Number of Peaks (K)",
+         y=expression(atop(NA, atop(textstyle("FRiP"),
+                                    textstyle("(with prealignments)"))))) +
+    lims(x=c(0,1000), y=c(0,1)) +
+    theme_PEPATAC() +
+    theme(legend.position = c(0.85, 0.1),
+          legend.title = element_blank())
+
+plot_build <- ggplot_build(pre_FRiP_peaks_plot)
+# Construct labels
+p_labels <- plot_build$data[[3]]["label"]
+p_labels[1,] <- paste0(p_labels[1,], "~~~italic(tau)~`=`~",
+                       stat.test$cor[[1]],
+                       ifelse(stat.test$p[[1]] == "*", "^`*`", ""))
+p_labels[2,] <- paste0(p_labels[2,], "~~~italic(tau)~`=`~",
+                       stat.test$cor[[2]],
+                       ifelse(stat.test$p[[2]] == "*", "^`*`", ""))
+p_labels[3,] <- paste0(p_labels[3,], "~~~italic(tau)~`=`~",
+                       stat.test$cor[[3]],
+                       ifelse(stat.test$p[[3]] == "*", "^`*`", ""))
+
+pre_FRiP_peaks_plot <- ggplot(data=pre_no_outliers,
+    aes(x=peak_count/1000, y=FRiP, color=protocol_type, group=protocol_type)) +
+    geom_point(alpha=.3) +
+    geom_smooth(method = "lm", fill = NA) +
+    labs(x="Number of Peaks (K)",
+         y=expression(atop(NA, atop(textstyle("FRiP"),
+                                    textstyle("(with prealignments)"))))) +
+    lims(x=c(0,1000), y=c(0,1)) +
+    theme_PEPATAC() +
+    theme(legend.position = c(0.85, 0.1),
+          legend.title = element_blank())
+
+plot(pre_FRiP_peaks_plot +
+    scale_color_manual(values=plot_build$data[[3]]["colour"]$colour,
+                       labels=c("Standard","Fast","Omni")) +
+    annotate("text", x = 10, y = 1.00, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[1]],
+             label = paste0("paste(", p_labels[1,], ")"), parse=TRUE) +
+    annotate("text", x = 10, y = 0.95, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[2]],
+             label = paste0("paste(", p_labels[2,], ")"), parse=TRUE) + 
+    annotate("text", x = 10, y = 0.90, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[3]],
+             label = paste0("paste(", p_labels[3,], ")"), parse=TRUE)
+)
+
+svg("PEPATAC_Figure6f.svg")
+pre_FRiP_peaks_plot +
+    scale_color_manual(values=plot_build$data[[3]]["colour"]$colour,
+                       labels=c("Standard","Fast","Omni")) +
+    annotate("text", x = 10, y = 1.00, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[1]],
+             label = paste0("paste(", p_labels[1,], ")"), parse=TRUE) +
+    annotate("text", x = 10, y = 0.95, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[2]],
+             label = paste0("paste(", p_labels[2,], ")"), parse=TRUE) + 
+    annotate("text", x = 10, y = 0.90, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[3]],
+             label = paste0("paste(", p_labels[3,], ")"), parse=TRUE)
+dev.off()
+
+# Without prealignments
+no_pre_no_outliers <- no_pre[!no_pre$FRiP %in% boxplot.stats(no_pre$FRiP)$out,]
+stat.test <- no_pre_no_outliers %>%
+    group_by(protocol_type) %>%
+    cor_test(peak_count, FRiP, method = "kendall")
+
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.001,"**")
+stat.test$p <- replace(stat.test$p, as.numeric(stat.test$p)<0.01,"*")
+no_pre_FRiP_peaks_plot <- ggplot(data=no_pre_no_outliers,
+    aes(x=peak_count/1000, y=FRiP, color=protocol_type, group=protocol_type)) +
+    geom_point(alpha=.3) +
+    geom_smooth(method = "lm", fill = NA) +
+    stat_poly_eq(formula = "y ~ x", 
+                 aes(label = paste(..eq.label.., ..rr.label.., sep = "~~~")), 
+                 parse = TRUE) +
+    labs(x="Number of Peaks (K)",
+         y=expression(atop(NA, atop(textstyle("FRiP"),
+                                    textstyle("(without prealignments)"))))) +
+    lims(x=c(0,1000), y=c(0,1)) +
+    theme_PEPATAC() +
+    theme(legend.position = c(0.85, 0.1),
+          legend.title = element_blank())
+
+plot_build <- ggplot_build(no_pre_FRiP_peaks_plot)
+# Construct labels
+p_labels <- plot_build$data[[3]]["label"]
+p_labels[1,] <- paste0(p_labels[1,], "~~~italic(tau)~`=`~",
+                       stat.test$cor[[1]],
+                       ifelse(stat.test$p[[1]] == "**", "^`**`", ""))
+p_labels[2,] <- paste0(p_labels[2,], "~~~italic(tau)~`=`~",
+                       stat.test$cor[[2]],
+                       ifelse(stat.test$p[[2]] == "**", "^`**`", ""))
+p_labels[3,] <- paste0(p_labels[3,], "~~~italic(tau)~`=`~",
+                       stat.test$cor[[3]],
+                       ifelse(stat.test$p[[3]] == "**", "^`**`", ""))
+
+no_pre_FRiP_peaks_plot <- ggplot(data=no_pre_no_outliers,
+    aes(x=peak_count/1000, y=FRiP, color=protocol_type, group=protocol_type)) +
+    geom_point(alpha=.3) +
+    geom_smooth(method = "lm", fill = NA) +
+    labs(x="Number of Peaks (K)",
+         y=expression(atop(NA, atop(textstyle("FRiP"),
+                                    textstyle("(without prealignments)"))))) +
+    lims(x=c(0,1000), y=c(0,1)) +
+    theme_PEPATAC() +
+    theme(legend.position = c(0.85, 0.1),
+          legend.title = element_blank())
+
+plot(no_pre_FRiP_peaks_plot +
+    scale_color_manual(values=plot_build$data[[3]]["colour"]$colour,
+                       labels=c("Standard","Fast","Omni")) +
+    annotate("text", x = 10, y = 1.00, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[1]],
+             label = paste0("paste(", p_labels[1,], ")"), parse=TRUE) +
+    annotate("text", x = 10, y = 0.95, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[2]],
+             label = paste0("paste(", p_labels[2,], ")"), parse=TRUE) + 
+    annotate("text", x = 10, y = 0.90, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[3]],
+             label = paste0("paste(", p_labels[3,], ")"), parse=TRUE)
+)
+
+svg("PEPATAC_Figure6e.svg")
+pre_FRiP_peaks_plot +
+    scale_color_manual(values=plot_build$data[[3]]["colour"]$colour,
+                       labels=c("Standard","Fast","Omni")) +
+    annotate("text", x = 10, y = 1.00, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[1]],
+             label = paste0("paste(", p_labels[1,], ")"), parse=TRUE) +
+    annotate("text", x = 10, y = 0.95, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[2]],
+             label = paste0("paste(", p_labels[2,], ")"), parse=TRUE) + 
+    annotate("text", x = 10, y = 0.90, hjust = 0,
+             color = plot_build$data[[3]]["colour"]$colour[[3]],
+             label = paste0("paste(", p_labels[3,], ")"), parse=TRUE)
+dev.off()
+```
