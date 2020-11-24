@@ -32,7 +32,7 @@ looper report paper_none_config.yaml
 
 This will produce output variants with prealignments and without for downstream comparisons.
 
-The [included markdown file](src/PEPATAC_paper_plots.md) may be followed to reproduce the plots in R from the paper.
+The [included R markdown file](src/PEPATAC_paper_plots.Rmd) may be followed to reproduce the plots in R from the paper.
 
 ## Prealignment comparisons
 To produce the prealignment timing comparison plots requires three primary steps.
