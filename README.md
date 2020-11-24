@@ -1,8 +1,22 @@
 # PEPATAC paper analyses
 
-## Paper figures
+## Get the data files
 
-To produce the figures in the paper, you'll first need to download and process the samples found in the "paper_sample_table.csv" included file.
+The data used for the paper is available from public resources. Included in the `metadata/` subfolder is the 
+"paper_sra_accessions.txt" file containing a list of sequence read archive accession numbers.
+
+To obtain the files en masse, you can provide the entire file to NCBI's sra-tools' `fasterq-dump` function like so:
+```
+cat paper_sra_accessions.txt | xargs -n1 fasterq-dump -p -O /path/to/output_dir
+```
+
+To simplify use of downstream configuration files, you can also create an environment variable (`SRAFQ`) that points to this output directory containing your fastq files.
+
+```
+export SRAFQ=/path/to/output_dir
+```
+
+## Run the pipeline
 
 After downloading, you can process using the pipeline:
 ```
