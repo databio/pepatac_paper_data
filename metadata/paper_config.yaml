@@ -8,12 +8,12 @@ looper:
 
 sample_modifiers:
   append:
-    pipeline_interfaces: $CODE/pepatac/pipeline_interface.yaml
+    pipeline_interfaces: $CODE/pepatac/sample_pipeline_interface.yaml
   derive:
     attributes: [read1, read2]
     sources:
-      FQ1: ${SRAFQ}/{SRR}_1.fastq.gz
-      FQ2: ${SRAFQ}/{SRR}_2.fastq.gz
+      FQ1: ${SRAFQ}/{srr}_1.fastq.gz
+      FQ2: ${SRAFQ}/{srr}_2.fastq.gz
   imply:
     - if: 
         organism: ["human", "Homo sapiens", "Human", "Homo_sapiens"]

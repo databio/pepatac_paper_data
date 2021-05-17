@@ -1,0 +1,431 @@
+sample_name,condition,replicate,disease_state,source,notes,organism,protocol,Run,Experiment,read_type,read1,read2
+AML_1,AML,1,acute myeloid leukemia,OCI-AML2,,human,ATACseq,SRR6304622,SRX3405142,paired,SRA_1,SRA_2
+AML_2,AML,2,acute myeloid leukemia,OCI-AML2,,human,ATACseq,SRR6304621,SRX3405141,paired,SRA_1,SRA_2
+AML_3,AML,3,acute myeloid leukemia,OCI-AML2,,human,ATACseq,SRR6304620,SRX3405140,paired,SRA_1,SRA_2
+AML_4,AML,4,acute myeloid leukemia,OCI-AML2,,human,ATACseq,SRR6304616,SRX3405136,paired,SRA_1,SRA_2
+AML_5,AML,5,acute myeloid leukemia,OCI-AML2,,human,ATACseq,SRR6304615,SRX3405135,paired,SRA_1,SRA_2
+AML_6,AML,6,acute myeloid leukemia,OCI-AML2,,human,ATACseq,SRR6304614,SRX3405134,paired,SRA_1,SRA_2
+AML_7,AML,7,acute myeloid leukemia,MOLM13_WT,,human,ATACseq,SRR7010323,SRX3942803,paired,SRA_1,SRA_2
+AML_8,AML,8,acute myeloid leukemia,MOLM13_WT,,human,ATACseq,SRR7010324,SRX3942804,paired,SRA_1,SRA_2
+AML_9,AML,9,acute myeloid leukemia,THP1 AML cells,,human,ATACseq,SRR5068862,SRX2388747,paired,SRA_1,SRA_2
+AML_10,AML,10,acute myeloid leukemia,THP1 AML cells,,human,ATACseq,SRR5068861,SRX2388747,paired,SRA_1,SRA_2
+AML_11,AML,11,acute myeloid leukemia,THP1 AML cells,,human,ATACseq,SRR5068860,SRX2388747,paired,SRA_1,SRA_2
+AML_12,AML,12,acute myeloid leukemia,MOLM-14,,human,ATACseq,SRR3932757,SRX1962077,paired,SRA_1,SRA_2
+AML_13,AML,13,acute myeloid leukemia,HL-60,,human,ATACseq,SRR3932756,SRX1962076,paired,SRA_1,SRA_2
+AML_14,AML,14,acute myeloid leukemia,Blast,,human,ATACseq,SRR2775638,SRX1371460,paired,SRA_1,SRA_2
+AML_15,AML,15,acute myeloid leukemia,Blast,,human,ATACseq,SRR2775639,SRX1371461,paired,SRA_1,SRA_2
+APL_1,APL,1,acute promyelocytic leukemia,peripheral blood,,human,ATACseq,SRR5196904,SRX2512559,paired,SRA_1,SRA_2
+APL_2,APL,2,acute promyelocytic leukemia,peripheral blood,,human,ATACseq,SRR5196903,SRX2512558,paired,SRA_1,SRA_2
+APL_3,APL,3,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190542,SRX2506344,paired,SRA_1,SRA_2
+APL_4,APL,4,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190541,SRX2506344,paired,SRA_1,SRA_2
+APL_5,APL,5,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190540,SRX2506344,paired,SRA_1,SRA_2
+APL_6,APL,6,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190539,SRX2506344,paired,SRA_1,SRA_2
+APL_7,APL,7,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190538,SRX2506343,paired,SRA_1,SRA_2
+APL_8,APL,8,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190537,SRX2506343,paired,SRA_1,SRA_2
+APL_9,APL,9,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190536,SRX2506343,paired,SRA_1,SRA_2
+APL_10,APL,10,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190535,SRX2506343,paired,SRA_1,SRA_2
+APL_11,APL,11,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190534,SRX2506342,paired,SRA_1,SRA_2
+APL_12,APL,12,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190533,SRX2506342,paired,SRA_1,SRA_2
+APL_13,APL,13,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190532,SRX2506342,paired,SRA_1,SRA_2
+APL_14,APL,14,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190531,SRX2506342,paired,SRA_1,SRA_2
+APL_15,APL,15,acute promyelocytic leukemia,NB4 cell line,,human,ATACseq,SRR5190530,SRX2506341,paired,SRA_1,SRA_2
+breast_1,healthy,1,healthy,mammary epithelial cell line,,human,ATACseq,SRR4436441,SRX2255552,paired,SRA_1,SRA_2
+breast_2,healthy,2,healthy,mammary epithelial cell line,,human,ATACseq,SRR4436440,SRX2255551,paired,SRA_1,SRA_2
+breast_3,healthy,3,healthy,mammary epithelial cell line,,human,ATACseq,SRR4436439,SRX2255550,paired,SRA_1,SRA_2
+breast_4,healthy,4,healthy,mammary epithelial cell line,,human,ATACseq,SRR4436438,SRX2255549,paired,SRA_1,SRA_2
+breast_5,healthy,5,healthy,mammary epithelial cell line,,human,ATACseq,SRR4436437,SRX2255548,paired,SRA_1,SRA_2
+breast_cancer_1,breast,1,breast cancer,ATCC #HTB-26,,human,ATACseq,SRR6310010,SRX3410393,paired,SRA_1,SRA_2
+breast_cancer_2,breast,2,breast cancer,ATCC #HTB-26,,human,ATACseq,SRR6310008,SRX3410391,paired,SRA_1,SRA_2
+breast_cancer_3,breast,3,breast cancer,ATCC #HTB-133,,human,ATACseq,SRR6310026,SRX3410409,paired,SRA_1,SRA_2
+breast_cancer_4,breast,4,breast cancer,ATCC #HTB-133,,human,ATACseq,SRR6310028,SRX3410411,paired,SRA_1,SRA_2
+breast_cancer_5,breast,5,breast cancer,breast cancer cell line,,human,ATACseq,SRR6300361,SRX3401286,paired,SRA_1,SRA_2
+breast_cancer_6,breast,6,breast cancer,breast cancer cell line,,human,ATACseq,SRR6300360,SRX3401285,paired,SRA_1,SRA_2
+breast_cancer_7,breast,7,breast cancer,breast cancer cell line,,human,ATACseq,SRR5626534,SRX2867091,paired,SRA_1,SRA_2
+breast_cancer_8,breast,8,breast cancer,breast cancer cell line,,human,ATACseq,SRR5626533,SRX2867090,paired,SRA_1,SRA_2
+breast_cancer_9,breast,9,breast cancer,"MCF-7 sh-p53, untreated",,human,ATACseq,SRR5857008,SRX3025912,paired,SRA_1,SRA_2
+breast_cancer_10,breast,10,breast cancer,"MCF-7, untreated",,human,ATACseq,SRR5857006,SRX3025910,paired,SRA_1,SRA_2
+breast_cancer_11,breast,11,breast cancer,breast,,human,ATACseq,SRR3929043,SRX1958703,paired,SRA_1,SRA_2
+breast_cancer_12,breast,12,breast cancer,breast,,human,ATACseq,SRR3929042,SRX1958702,paired,SRA_1,SRA_2
+breast_cancer_13,breast,13,breast cancer,breast,,human,ATACseq,SRR3929041,SRX1958701,paired,SRA_1,SRA_2
+breast_cancer_14,breast,14,breast cancer,breast,,human,ATACseq,SRR3929040,SRX1958700,paired,SRA_1,SRA_2
+breast_cancer_15,breast,15,breast cancer,MDA-MB-231,,human,ATACseq,SRR2171290,SRX1156486,paired,SRA_1,SRA_2
+CD14+_1,healthy,1,healthy,CD14+ monocyte cell,,human,ATACseq,SRR2920543,SRX1427866,paired,SRA_1,SRA_2
+CD14+_2,healthy,2,healthy,CD14+ monocyte cell,,human,ATACseq,SRR2920542,SRX1427865,paired,SRA_1,SRA_2
+CD14+_3,healthy,3,healthy,CD14+ monocyte cell,,human,ATACseq,SRR2920488,SRX1427811,paired,SRA_1,SRA_2
+CD14+_4,healthy,4,healthy,CD14+ monocyte cell,,human,ATACseq,SRR2920487,SRX1427810,paired,SRA_1,SRA_2
+CD14+_5,healthy,5,healthy,CD14+ monocyte cell,,human,ATACseq,SRR2920476,SRX1427799,paired,SRA_1,SRA_2
+CD14+_6,healthy,6,healthy,CD14+ monocyte cell,,human,ATACseq,SRR2920475,SRX1427798,paired,SRA_1,SRA_2
+CD19+CD20+_1,healthy,1,healthy,CD19+CD20+ B cell,,human,ATACseq,SRR2920544,SRX1427867,paired,SRA_1,SRA_2
+CD19+CD20+_2,healthy,2,healthy,CD19+CD20+ B cell,,human,ATACseq,SRR2920517,SRX1427840,paired,SRA_1,SRA_2
+CD19+CD20+_3,healthy,3,healthy,CD19+CD20+ B cell,,human,ATACseq,SRR2920513,SRX1427836,paired,SRA_1,SRA_2
+CD19+CD20+_4,healthy,4,healthy,CD19+CD20+ B cell,,human,ATACseq,SRR2920492,SRX1427815,paired,SRA_1,SRA_2
+CD34+_1,healthy,1,healthy,CD34+ bone marrow,,human,ATACseq,SRR2920490,SRX1427813,paired,SRA_1,SRA_2
+CD34+_2,healthy,2,healthy,CD34+ bone marrow,,human,ATACseq,SRR2920489,SRX1427812,paired,SRA_1,SRA_2
+CD34+_3,healthy,3,healthy,CD34+ cord blood,,human,ATACseq,SRR2920491,SRX1427814,paired,SRA_1,SRA_2
+CD4+_1,healthy,1,healthy,CD4+ T cell,,human,ATACseq,SRR2920519,SRX1427842,paired,SRA_1,SRA_2
+CD4+_2,healthy,2,healthy,CD4+ T cell,,human,ATACseq,SRR2920518,SRX1427841,paired,SRA_1,SRA_2
+CD4+_3,healthy,3,healthy,CD4+ T cell,,human,ATACseq,SRR2920514,SRX1427837,paired,SRA_1,SRA_2
+CD4+_4,healthy,4,healthy,CD4+ T cell,,human,ATACseq,SRR2920496,SRX1427819,paired,SRA_1,SRA_2
+CD4+_5,healthy,5,healthy,CD4+ T cell,,human,ATACseq,SRR2920493,SRX1427816,paired,SRA_1,SRA_2
+CD4+_6,healthy,6,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556380,SRX685459,paired,SRA_1,SRA_2
+CD4+_7,healthy,7,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556379,SRX685458,paired,SRA_1,SRA_2
+CD4+_8,healthy,8,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556378,SRX685457,paired,SRA_1,SRA_2
+CD4+_9,healthy,9,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556377,SRX685456,paired,SRA_1,SRA_2
+CD4+_10,healthy,10,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556376,SRX685455,paired,SRA_1,SRA_2
+CD4+_11,healthy,11,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556375,SRX685454,paired,SRA_1,SRA_2
+CD4+_12,healthy,12,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556370,SRX685449,paired,SRA_1,SRA_2
+CD4+_13,healthy,13,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556369,SRX685448,paired,SRA_1,SRA_2
+CD4+_14,healthy,14,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556368,SRX685447,paired,SRA_1,SRA_2
+CD4+_15,healthy,15,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556367,SRX685446,paired,SRA_1,SRA_2
+CD4+_16,healthy,16,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556366,SRX685445,paired,SRA_1,SRA_2
+CD4+_17,healthy,17,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556334,SRX685413,paired,SRA_1,SRA_2
+CD4+_18,healthy,18,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556333,SRX685412,paired,SRA_1,SRA_2
+CD4+_19,healthy,19,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556332,SRX685411,paired,SRA_1,SRA_2
+CD4+_20,healthy,20,healthy,"CD4+ T cells, normal donor",,human,ATACseq,SRR1556331,SRX685410,paired,SRA_1,SRA_2
+CD56+_1,healthy,1,healthy,CD56+ natural killer cell,,human,ATACseq,SRR2920527,SRX1427850,paired,SRA_1,SRA_2
+CD56+_2,healthy,2,healthy,CD56+ natural killer cell,,human,ATACseq,SRR2920526,SRX1427849,paired,SRA_1,SRA_2
+CD56+_3,healthy,3,healthy,CD56+ natural killer cell,,human,ATACseq,SRR2920516,SRX1427839,paired,SRA_1,SRA_2
+CD56+_4,healthy,4,healthy,CD56+ natural killer cell,,human,ATACseq,SRR2920512,SRX1427835,paired,SRA_1,SRA_2
+CD56+_5,healthy,5,healthy,CD56+ natural killer cell,,human,ATACseq,SRR2920511,SRX1427834,paired,SRA_1,SRA_2
+CD56+_6,healthy,6,healthy,CD56+ natural killer cell,,human,ATACseq,SRR2920495,SRX1427818,paired,SRA_1,SRA_2
+CD71+GPA+_1,healthy,1,healthy,CD71+GPA+ erythroblast cell,,human,ATACseq,SRR2920529,SRX1427852,paired,SRA_1,SRA_2
+CD71+GPA+_2,healthy,2,healthy,CD71+GPA+ erythroblast cell,,human,ATACseq,SRR2920530,SRX1427853,paired,SRA_1,SRA_2
+CD71+GPA+_3,healthy,3,healthy,CD71+GPA+ erythroblast cell,,human,ATACseq,SRR2920525,SRX1427848,paired,SRA_1,SRA_2
+CD71+GPA+_4,healthy,4,healthy,CD71+GPA+ erythroblast cell,,human,ATACseq,SRR2920524,SRX1427847,paired,SRA_1,SRA_2
+CD71+GPA+_5,healthy,5,healthy,CD71+GPA+ erythroblast cell,,human,ATACseq,SRR2920523,SRX1427846,paired,SRA_1,SRA_2
+CD71+GPA+_6,healthy,6,healthy,CD71+GPA+ erythroblast cell,,human,ATACseq,SRR2920504,SRX1427827,paired,SRA_1,SRA_2
+CD71+GPA+_7,healthy,7,healthy,CD71+GPA+ erythroblast cell,,human,ATACseq,SRR2920503,SRX1427826,paired,SRA_1,SRA_2
+CD71+GPA+_8,healthy,8,healthy,CD71+GPA+ erythroblast cell,,human,ATACseq,SRR2920502,SRX1427825,paired,SRA_1,SRA_2
+CD8_CD45RA+_1,healthy,1,healthy,Naïve sort-purified CD8/CD45RA+ peripheral blood lymphocytes,,human,ATACseq,SRR4568585,SRX2309933,paired,SRA_1,SRA_2
+CD8_CD45RA+_2,healthy,2,healthy,Naïve sort-purified CD8/CD45RA+ peripheral blood lymphocytes,,human,ATACseq,SRR4568584,SRX2309932,paired,SRA_1,SRA_2
+CD8_CD45RA+_3,healthy,3,healthy,Naïve sort-purified CD8/CD45RA+ peripheral blood lymphocytes,,human,ATACseq,SRR4568583,SRX2309931,paired,SRA_1,SRA_2
+CD8_CD45RO+_CD62L-hi_1,healthy,1,healthy,Central Memory sort-purified CD8/CD45RO+/CD62L(hi) peripheral blood lymphocytes,,human,ATACseq,SRR4568591,SRX2309939,paired,SRA_1,SRA_2
+CD8_CD45RO+_CD62L-hi_2,healthy,2,healthy,Central Memory sort-purified CD8/CD45RO+/CD62L(hi) peripheral blood lymphocytes,,human,ATACseq,SRR4568590,SRX2309938,paired,SRA_1,SRA_2
+CD8_CD45RO+_CD62L-hi_3,healthy,3,healthy,Central Memory sort-purified CD8/CD45RO+/CD62L(hi) peripheral blood lymphocytes,,human,ATACseq,SRR4568589,SRX2309937,paired,SRA_1,SRA_2
+CD8_CD45RO+_CD62L-low_1,healthy,1,healthy,Effector Memory sort-purified CD8/CD45RO+/CD62L(low) peripheral blood lymphocytes,,human,ATACseq,SRR4568588,SRX2309936,paired,SRA_1,SRA_2
+CD8_CD45RO+_CD62L-low_2,healthy,2,healthy,Effector Memory sort-purified CD8/CD45RO+/CD62L(low) peripheral blood lymphocytes,,human,ATACseq,SRR4568587,SRX2309935,paired,SRA_1,SRA_2
+CD8_CD45RO+_CD62L-low_3,healthy,3,healthy,Effector Memory sort-purified CD8/CD45RO+/CD62L(low) peripheral blood lymphocytes,,human,ATACseq,SRR4568586,SRX2309934,paired,SRA_1,SRA_2
+CD8+_1,healthy,1,healthy,CD8+ T cell,,human,ATACseq,SRR2920521,SRX1427844,paired,SRA_1,SRA_2
+CD8+_2,healthy,2,healthy,CD8+ T cell,,human,ATACseq,SRR2920520,SRX1427843,paired,SRA_1,SRA_2
+CD8+_3,healthy,3,healthy,CD8+ T cell,,human,ATACseq,SRR2920515,SRX1427838,paired,SRA_1,SRA_2
+CD8+_4,healthy,4,healthy,CD8+ T cell,,human,ATACseq,SRR2920497,SRX1427820,paired,SRA_1,SRA_2
+CD8+_5,healthy,5,healthy,CD8+ T cell,,human,ATACseq,SRR2920494,SRX1427817,paired,SRA_1,SRA_2
+cDC_1,healthy,1,healthy,cDCs Donor-1,,human,ATACseq,SRR3932759,SRX1962079,paired,SRA_1,SRA_2
+cDC_2,healthy,2,healthy,cDCs Donor-2,,human,ATACseq,SRR3932761,SRX1962081,paired,SRA_1,SRA_2
+CLL_1,CLL,1,T-cell leukemia,ALL-SIL cell line,,human,ATACseq,SRR6727575,SRX3700577,single,SRA_1,
+CLL_2,CLL,2,T-cell leukemia,ALL-SIL cell line,,human,ATACseq,SRR6727574,SRX3700577,single,SRA_1,
+CLP_1,healthy,1,healthy,common lymphoid progenitor cell,,human,ATACseq,SRR2920545,SRX1427868,paired,SRA_1,SRA_2
+CLP_2,healthy,2,healthy,common lymphoid progenitor cell,,human,ATACseq,SRR2920528,SRX1427851,paired,SRA_1,SRA_2
+CLP_3,healthy,3,healthy,common lymphoid progenitor cell,,human,ATACseq,SRR2920522,SRX1427845,paired,SRA_1,SRA_2
+CLP_4,healthy,4,healthy,common lymphoid progenitor cell,,human,ATACseq,SRR2920499,SRX1427822,paired,SRA_1,SRA_2
+CLP_5,healthy,5,healthy,common lymphoid progenitor cell,,human,ATACseq,SRR2920498,SRX1427821,paired,SRA_1,SRA_2
+CML_1,CML,1,chronic myelogenous leukemia,Male Chronic Myelogenous Leukemia (CML) cell line derived from KBM-7,,human,ATACseq,SRR6766920,SRX3738184,paired,SRA_1,SRA_2
+CML_2,CML,2,chronic myelogenous leukemia,Male Chronic Myelogenous Leukemia (CML) cell line derived from KBM-7,,human,ATACseq,SRR6766919,SRX3738183,paired,SRA_1,SRA_2
+CML_3,CML,3,chronic myelogenous leukemia,Male Chronic Myelogenous Leukemia (CML) cell line derived from KBM-7,,human,ATACseq,SRR6766918,SRX3738182,paired,SRA_1,SRA_2
+CML_4,CML,4,chronic myelogenous leukemia,Male Chronic Myelogenous Leukemia (CML) cell line derived from KBM-7,,human,ATACseq,SRR6766911,SRX3738175,paired,SRA_1,SRA_2
+CML_5,CML,5,chronic myelogenous leukemia,Male Chronic Myelogenous Leukemia (CML) cell line derived from KBM-7,,human,ATACseq,SRR6766910,SRX3738174,paired,SRA_1,SRA_2
+CML_6,CML,6,chronic myelogenous leukemia,Male Chronic Myelogenous Leukemia (CML) cell line derived from KBM-7,,human,ATACseq,SRR6766909,SRX3738173,paired,SRA_1,SRA_2
+CML_7,CML,7,chronic myelogenous leukemia,K562 cell line,,human,ATACseq,SRR3822969,SRX1495140,paired,SRA_1,SRA_2
+CML_8,CML,8,chronic myelogenous leukemia,K562 cell line,,human,ATACseq,SRR3822970,SRX1495141,paired,SRA_1,SRA_2
+CML_9,CML,9,chronic myelogenous leukemia,K562 cell line,,human,ATACseq,SRR3822972,SRX1495142,paired,SRA_1,SRA_2
+CML_10,CML,10,chronic myelogenous leukemia,K562 cell line,,human,ATACseq,SRR3822973,SRX1495143,paired,SRA_1,SRA_2
+CMP_1,healthy,1,healthy,common myeloid progenitor cell,,human,ATACseq,SRR2920537,SRX1427860,paired,SRA_1,SRA_2
+CMP_2,healthy,2,healthy,common myeloid progenitor cell,,human,ATACseq,SRR2920536,SRX1427859,paired,SRA_1,SRA_2
+CMP_3,healthy,3,healthy,common myeloid progenitor cell,,human,ATACseq,SRR2920501,SRX1427824,paired,SRA_1,SRA_2
+CMP_4,healthy,4,healthy,common myeloid progenitor cell,,human,ATACseq,SRR2920500,SRX1427823,paired,SRA_1,SRA_2
+CMP_5,healthy,5,healthy,common myeloid progenitor cell,,human,ATACseq,SRR2920482,SRX1427805,paired,SRA_1,SRA_2
+CMP_6,healthy,6,healthy,common myeloid progenitor cell,,human,ATACseq,SRR2920481,SRX1427804,paired,SRA_1,SRA_2
+CMP_7,healthy,7,healthy,common myeloid progenitor cell,,human,ATACseq,SRR2920470,SRX1427793,paired,SRA_1,SRA_2
+CMP_8,healthy,8,healthy,common myeloid progenitor cell,,human,ATACseq,SRR2920469,SRX1427792,paired,SRA_1,SRA_2
+CRC_1,CRC,1,colorectal,"Dukes'' type C, grade IV, colorectal adenocarcinoma",,human,ATACseq,SRR7060333,SRX3991265,paired,SRA_1,SRA_2
+CRC_2,CRC,2,colorectal,"Dukes'' type C, grade IV, colorectal adenocarcinoma",,human,ATACseq,SRR7060332,SRX3991264,paired,SRA_1,SRA_2
+CRC_3,CRC,3,colorectal,"Dukes'' type C, grade IV, colorectal adenocarcinoma",,human,ATACseq,SRR7060331,SRX3991263,paired,SRA_1,SRA_2
+CRC_4,CRC,4,colorectal,"Dukes'' type C, grade IV, colorectal adenocarcinoma",,human,ATACseq,SRR7060330,SRX3991262,paired,SRA_1,SRA_2
+CRC_5,CRC,5,colorectal,"Dukes'' type C, grade IV, colorectal adenocarcinoma",,human,ATACseq,SRR7060329,SRX3991261,paired,SRA_1,SRA_2
+CRC_6,CRC,6,colorectal,"Dukes'' type C, grade IV, colorectal adenocarcinoma",,human,ATACseq,SRR7060328,SRX3991260,paired,SRA_1,SRA_2
+CRC_7,CRC,7,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012102,SRX3944557,paired,SRA_1,SRA_2
+CRC_8,CRC,8,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012101,SRX3944557,paired,SRA_1,SRA_2
+CRC_9,CRC,9,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012100,SRX3944556,paired,SRA_1,SRA_2
+CRC_10,CRC,10,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012099,SRX3944556,paired,SRA_1,SRA_2
+CRC_11,CRC,11,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012098,SRX3944555,paired,SRA_1,SRA_2
+CRC_12,CRC,12,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012097,SRX3944555,paired,SRA_1,SRA_2
+CRC_13,CRC,13,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012090,SRX3944551,paired,SRA_1,SRA_2
+CRC_14,CRC,14,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012089,SRX3944551,paired,SRA_1,SRA_2
+CRC_15,CRC,15,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012088,SRX3944550,paired,SRA_1,SRA_2
+CRC_16,CRC,16,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012087,SRX3944550,paired,SRA_1,SRA_2
+CRC_17,CRC,17,colorectal adenocarcinoma,HT29/C1,,human,ATACseq,SRR7012086,SRX3944549,paired,SRA_1,SRA_2
+CRC_18,CRC,18,colorectal carcinoma,HCT116,,human,ATACseq,SRR5876158,SRX3043674,paired,SRA_1,SRA_2
+CRC_19,CRC,19,colorectal carcinoma,HCT116,,human,ATACseq,SRR5876159,SRX3043675,paired,SRA_1,SRA_2
+CRC_20,CRC,20,colorectal carcinoma,HCT116 ARID1A-/-,,human,ATACseq,SRR5876162,SRX3043678,paired,SRA_1,SRA_2
+CRC_21,CRC,21,colorectal carcinoma,HCT116 ARID1A-/-,,human,ATACseq,SRR5876163,SRX3043679,paired,SRA_1,SRA_2
+CTCL_1,CTCL,1,cutaneous T cell leukemia,Leukemic_Patient1424_Romi_Day0,,human,ATACseq,SRR4044893,SRX2035757,paired,SRA_1,SRA_2
+CTCL_2,CTCL,2,cutaneous T cell leukemia,Leukemic_Patient1366_Romi_Day0,,human,ATACseq,SRR4044892,SRX2035756,paired,SRA_1,SRA_2
+CTCL_3,CTCL,3,cutaneous T cell leukemia,Leukemic_Patient62_Romi_Day0,,human,ATACseq,SRR4044891,SRX2035755,paired,SRA_1,SRA_2
+CTCL_4,CTCL,4,cutaneous T cell leukemia,Leukemic_Patient62_Romi_Day0,,human,ATACseq,SRR4044890,SRX2035754,paired,SRA_1,SRA_2
+CTCL_5,CTCL,5,cutaneous T cell leukemia,Leukemic_Patient61_Romi_Day0,,human,ATACseq,SRR4044889,SRX2035753,paired,SRA_1,SRA_2
+CTCL_6,CTCL,6,cutaneous T cell leukemia,Leukemic_Patient60_Romi_Day0,,human,ATACseq,SRR4044887,SRX2035751,paired,SRA_1,SRA_2
+CTCL_7,CTCL,7,cutaneous T cell leukemia,Leukemic_Patient39_Romi_Day0,,human,ATACseq,SRR4044880,SRX2035744,paired,SRA_1,SRA_2
+CTCL_8,CTCL,8,cutaneous T cell leukemia,Leukemic_Patient39_Romi_Day0,,human,ATACseq,SRR4044879,SRX2035743,paired,SRA_1,SRA_2
+CTCL_9,CTCL,9,cutaneous T cell leukemia,Leukemic_Patient11_Romi_Day0,,human,ATACseq,SRR4044873,SRX2035737,paired,SRA_1,SRA_2
+CTCL_10,CTCL,10,cutaneous T cell leukemia,Leukemic_Patient11_Romi_Day0,,human,ATACseq,SRR4044872,SRX2035736,paired,SRA_1,SRA_2
+CTCL_11,CTCL,11,cutaneous T cell leukemia,"human CD4+ T cells, patient with CTCL",,human,ATACseq,SRR1556351,SRX685430,paired,SRA_1,SRA_2
+CTCL_12,CTCL,12,cutaneous T cell leukemia,"human CD4+ T cells, patient with CTCL",,human,ATACseq,SRR1556350,SRX685429,paired,SRA_1,SRA_2
+CTCL_13,CTCL,13,cutaneous T cell leukemia,"human CD4+ T cells, patient with CTCL",,human,ATACseq,SRR1556349,SRX685428,paired,SRA_1,SRA_2
+CTCL_14,CTCL,14,cutaneous T cell leukemia,"human CD4+ T cells, patient with CTCL",,human,ATACseq,SRR1556348,SRX685427,paired,SRA_1,SRA_2
+CTCL_15,CTCL,15,cutaneous T cell leukemia,"human CD4+ T cells, patient with CTCL",,human,ATACseq,SRR1556347,SRX685426,paired,SRA_1,SRA_2
+GBM_1,GBM,1,glioblastoma,Patient-Derived Glioblastoma Stem Cell,,human,ATACseq,SRR7642282,SRX4505716,paired,SRA_1,SRA_2
+GBM_2,GBM,2,glioblastoma,Patient-Derived Glioblastoma Stem Cell,,human,ATACseq,SRR7642281,SRX4505715,paired,SRA_1,SRA_2
+GBM_3,GBM,3,glioblastoma,"ATAC-seq with synchronized M-phase T98G cells, rep1",,human,ATACseq,SRR6251847,SRX3358780,paired,SRA_1,SRA_2
+GBM_4,GBM,4,glioblastoma,"ATAC-seq with synchronized M-phase T98G cells, rep1",,human,ATACseq,SRR6251844,SRX3358777,paired,SRA_1,SRA_2
+GBM_5,GBM,5,glioblastoma,"ATAC-seq with synchronized G1 T98G cells, rep3",,human,ATACseq,SRR6251843,SRX3358776,paired,SRA_1,SRA_2
+GBM_6,GBM,6,glioblastoma,"ATAC-seq with synchronized G1 T98G cells, rep2",,human,ATACseq,SRR6251842,SRX3358775,paired,SRA_1,SRA_2
+GBM_7,GBM,7,glioblastoma,"ATAC-seq with synchronized G1 T98G cells, rep1",,human,ATACseq,SRR6251841,SRX3358774,paired,SRA_1,SRA_2
+GBM_8,GBM,8,glioblastoma,Glioblastoma,,human,ATACseq,SRR7607809,SRX4472737,paired,SRA_1,SRA_2
+GBM_9,GBM,9,glioblastoma,Glioblastoma,,human,ATACseq,SRR7607810,SRX4472737,paired,SRA_1,SRA_2
+GBM_10,GBM,10,glioblastoma,Glioblastoma,,human,ATACseq,SRR7607817,SRX4472741,paired,SRA_1,SRA_2
+GBM_11,GBM,11,glioblastoma,Glioblastoma,,human,ATACseq,SRR7607818,SRX4472741,paired,SRA_1,SRA_2
+GBM_12,GBM,12,glioblastoma,Glioblastoma,,human,ATACseq,SRR7607819,SRX4472742,paired,SRA_1,SRA_2
+GBM_13,GBM,13,glioblastoma,Glioblastoma,,human,ATACseq,SRR7607820,SRX4472742,paired,SRA_1,SRA_2
+GBM_14,GBM,14,glioblastoma,Glioblastoma,,human,ATACseq,SRR7607821,SRX4472743,paired,SRA_1,SRA_2
+GBM_15,GBM,15,glioblastoma,Glioblastoma,,human,ATACseq,SRR7607822,SRX4472743,paired,SRA_1,SRA_2
+GIST_1,GIST,1,gastrointestinal stromal tumor,KIT-Independent GIST cell line,,human,ATACseq,SRR6048584,SRX2628120,paired,SRA_1,SRA_2
+GIST_2,GIST,2,gastrointestinal stromal tumor,KIT-dependent GIST cell line,,human,ATACseq,SRR6048583,SRX2628119,paired,SRA_1,SRA_2
+GIST_3,GIST,3,gastrointestinal stromal tumor,T1-siSCR,,human,ATACseq,SRR6265802,SRX3372008,paired,SRA_1,SRA_2
+GIST_4,GIST,4,gastrointestinal stromal tumor,G882-siSCR,,human,ATACseq,SRR6265799,SRX3372005,paired,SRA_1,SRA_2
+GIST_5,GIST,5,gastrointestinal stromal tumor,G48-siSCR,,human,ATACseq,SRR6265796,SRX3372002,paired,SRA_1,SRA_2
+GMP_1,healthy,1,healthy,granulocyte macrophage progenitor cell,,human,ATACseq,SRR2920539,SRX1427862,paired,SRA_1,SRA_2
+GMP_2,healthy,2,healthy,granulocyte macrophage progenitor cell,,human,ATACseq,SRR2920538,SRX1427861,paired,SRA_1,SRA_2
+GMP_3,healthy,3,healthy,granulocyte macrophage progenitor cell,,human,ATACseq,SRR2920505,SRX1427828,paired,SRA_1,SRA_2
+GMP_4,healthy,4,healthy,granulocyte macrophage progenitor cell,,human,ATACseq,SRR2920484,SRX1427807,paired,SRA_1,SRA_2
+GMP_5,healthy,5,healthy,granulocyte macrophage progenitor cell,,human,ATACseq,SRR2920483,SRX1427806,paired,SRA_1,SRA_2
+GMP_6,healthy,6,healthy,granulocyte macrophage progenitor cell,,human,ATACseq,SRR2920472,SRX1427795,paired,SRA_1,SRA_2
+GMP_7,healthy,7,healthy,granulocyte macrophage progenitor cell,,human,ATACseq,SRR2920471,SRX1427794,paired,SRA_1,SRA_2
+gynecologic_1,gynecologic,1,cervical,HeLa,,human,ATACseq,SRR8102131,SRX4928884,paired,SRA_1,SRA_2
+gynecologic_2,gynecologic,2,cervical,HeLa,,human,ATACseq,SRR8102130,SRX4928883,paired,SRA_1,SRA_2
+gynecologic_3,gynecologic,3,cervical,HeLa,,human,ATACseq,SRR8102129,SRX4928882,paired,SRA_1,SRA_2
+gynecologic_4,gynecologic,4,cervical,HeLa,,human,ATACseq,SRR8102128,SRX4928881,paired,SRA_1,SRA_2
+gynecologic_5,gynecologic,5,endometrial adenocarcinoma,Ishikawa cell line,,human,ATACseq,SRR6653442,SRX3630826,single,SRA_1,
+gynecologic_6,gynecologic,6,ovarian adenocarcinoma,RMG-1 clone in WT condition,,human,ATACseq,SRR6128872,SRX3241383,single,SRA_1,
+gynecologic_7,gynecologic,7,ovarian adenocarcinoma,RMG-1 clone in ARID1A-KD condition (doxyclicline inducible KD [72h]),,human,ATACseq,SRR6128871,SRX3241382,single,SRA_1,
+gynecologic_8,gynecologic,8,ovarian adenocarcinoma,RMG-1 clone in WT condition,,human,ATACseq,SRR6128870,SRX3241381,single,SRA_1,
+gynecologic_9,gynecologic,9,ovarian adenocarcinoma,RMG-1 clone in ARID1A-KD condition (doxyclicline inducible KD [72h]),,human,ATACseq,SRR6128873,SRX3241384,single,SRA_1,
+gynecologic_10,gynecologic,10,ovarian adenocarcinoma,TOV21G,,human,ATACseq,SRR5876661,SRX3044158,paired,SRA_1,SRA_2
+gynecologic_11,gynecologic,11,ovarian adenocarcinoma,TOV21G,,human,ATACseq,SRR5876662,SRX3044159,paired,SRA_1,SRA_2
+HSC_1,healthy,1,healthy,hematopoietic stem cell,,human,ATACseq,SRR2920532,SRX1427855,paired,SRA_1,SRA_2
+HSC_2,healthy,2,healthy,hematopoietic stem cell,,human,ATACseq,SRR2920531,SRX1427854,paired,SRA_1,SRA_2
+HSC_3,healthy,3,healthy,hematopoietic stem cell,,human,ATACseq,SRR2920507,SRX1427830,paired,SRA_1,SRA_2
+HSC_4,healthy,4,healthy,hematopoietic stem cell,,human,ATACseq,SRR2920506,SRX1427829,paired,SRA_1,SRA_2
+HSC_5,healthy,5,healthy,hematopoietic stem cell,,human,ATACseq,SRR2920477,SRX1427800,paired,SRA_1,SRA_2
+HSC_6,healthy,6,healthy,hematopoietic stem cell,,human,ATACseq,SRR2920478,SRX1427801,paired,SRA_1,SRA_2
+HSC_7,healthy,7,healthy,hematopoietic stem cell,,human,ATACseq,SRR2920466,SRX1427789,paired,SRA_1,SRA_2
+leukemia_1,leukemia,1,leukemia,MA9 leukemia xenograft,,human,ATACseq,SRR5800706,SRX2980173,paired,SRA_1,SRA_2
+leukemia_2,leukemia,2,leukemia,Human inv(16) leukemia cell line,,human,ATACseq,SRR5861513,SRX3030216,paired,SRA_1,SRA_2
+leukemia_3,leukemia,3,leukemia,Human inv(16) leukemia cell line,,human,ATACseq,SRR5861512,SRX3030215,paired,SRA_1,SRA_2
+leukemia_4,leukemia,4,leukemia,Lymphoblast,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR6288282,SRX3389662,paired,SRA_1,SRA_2
+leukemia_5,leukemia,5,leukemia,Lymphoblast,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR6288281,SRX3389661,paired,SRA_1,SRA_2
+leukemia_6,leukemia,6,leukemia,Lymphoblast,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR6288280,SRX3389660,paired,SRA_1,SRA_2
+leukemia_7,leukemia,7,leukemia,Lymphoblast,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR6288279,SRX3389659,paired,SRA_1,SRA_2
+leukemia_8,leukemia,8,leukemia,Lymphoblast,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR6288278,SRX3389658,paired,SRA_1,SRA_2
+leukemia_9,leukemia,9,leukemia,Lymphoblast,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR6288277,SRX3389657,paired,SRA_1,SRA_2
+leukemia_10,leukemia,10,leukemia,Leukemic lymphoblasts,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR5831768,SRX3009074,paired,SRA_1,SRA_2
+leukemia_11,leukemia,11,leukemia,Leukemic lymphoblasts,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR5831767,SRX3009073,paired,SRA_1,SRA_2
+leukemia_12,leukemia,12,leukemia,Leukemic lymphoblasts,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR5831760,SRX3009066,paired,SRA_1,SRA_2
+leukemia_13,leukemia,13,leukemia,Leukemic lymphoblasts,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR5831759,SRX3009065,paired,SRA_1,SRA_2
+leukemia_14,leukemia,14,leukemia,Leukemic lymphoblasts,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR5831758,SRX3009064,paired,SRA_1,SRA_2
+leukemia_15,leukemia,15,leukemia,Leukemic lymphoblasts,requires conversion from phred64 to phred33 (seqkit convert),human,ATACseq,SRR5831757,SRX3009063,paired,SRA_1,SRA_2
+LMPP_1,healthy,1,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986080,SRX1988098,paired,SRA_1,SRA_2
+LMPP_2,healthy,2,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986082,SRX1988100,paired,SRA_1,SRA_2
+LMPP_3,healthy,3,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986083,SRX1988101,paired,SRA_1,SRA_2
+LMPP_4,healthy,4,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986084,SRX1988102,paired,SRA_1,SRA_2
+LMPP_5,healthy,5,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986086,SRX1988104,paired,SRA_1,SRA_2
+LMPP_6,healthy,6,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986092,SRX1988110,paired,SRA_1,SRA_2
+LMPP_7,healthy,7,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986093,SRX1988111,paired,SRA_1,SRA_2
+LMPP_8,healthy,8,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986094,SRX1988112,paired,SRA_1,SRA_2
+LMPP_9,healthy,9,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986096,SRX1988114,paired,SRA_1,SRA_2
+LMPP_10,healthy,10,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986097,SRX1988115,paired,SRA_1,SRA_2
+LMPP_11,healthy,11,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986099,SRX1988117,paired,SRA_1,SRA_2
+LMPP_12,healthy,12,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986100,SRX1988118,paired,SRA_1,SRA_2
+LMPP_13,healthy,13,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986101,SRX1988119,paired,SRA_1,SRA_2
+LMPP_14,healthy,14,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986102,SRX1988120,paired,SRA_1,SRA_2
+LMPP_15,healthy,15,healthy,LMPP – lymphoid-primed MPP,,human,ATACseq,SRR3986103,SRX1988121,paired,SRA_1,SRA_2
+LMPP_16,healthy,16,healthy,lymphoid-primed multipotent progenitor cell,,human,ATACseq,SRR2920535,SRX1427858,paired,SRA_1,SRA_2
+LMPP_17,healthy,17,healthy,lymphoid-primed multipotent progenitor cell,,human,ATACseq,SRR2920480,SRX1427803,paired,SRA_1,SRA_2
+LMPP_18,healthy,18,healthy,lymphoid-primed multipotent progenitor cell,,human,ATACseq,SRR2920468,SRX1427791,paired,SRA_1,SRA_2
+lung_1,healthy,1,healthy,normal bronchial epithelial,,human,ATACseq,SRR7651665,SRX4514430,paired,SRA_1,SRA_2
+lung_2,healthy,2,healthy,normal bronchial epithelial,,human,ATACseq,SRR7651664,SRX4514429,paired,SRA_1,SRA_2
+lung_3,healthy,3,healthy,normal bronchial epithelial,,human,ATACseq,SRR7651663,SRX4514428,paired,SRA_1,SRA_2
+melanoma_1,melanoma,1,melanoma,WM989 cell line,,human,ATACseq,SRR5444796,SRX2733851,single,SRA_1,
+melanoma_2,melanoma,2,melanoma,WM989 cell line,,human,ATACseq,SRR5444795,SRX2733850,single,SRA_1,
+melanoma_3,melanoma,3,melanoma,WM989 cell line,,human,ATACseq,SRR5444794,SRX2733849,single,SRA_1,
+melanoma_4,melanoma,4,melanoma,WM989 cell line,,human,ATACseq,SRR5444793,SRX2733848,single,SRA_1,
+melanoma_5,melanoma,5,melanoma,WM989 cell line,,human,ATACseq,SRR5444792,SRX2733847,single,SRA_1,
+melanoma_6,melanoma,6,melanoma,WM989 cell line,,human,ATACseq,SRR5444791,SRX2733846,single,SRA_1,
+melanoma_7,melanoma,7,melanoma,WM989 cell line,,human,ATACseq,SRR5444790,SRX2733845,single,SRA_1,
+melanoma_8,melanoma,8,melanoma,WM989 cell line,,human,ATACseq,SRR5444789,SRX2733844,single,SRA_1,
+melanoma_9,melanoma,9,melanoma,WM989 cell line,,human,ATACseq,SRR5444788,SRX2733843,single,SRA_1,
+melanoma_10,melanoma,10,melanoma,WM989 cell line,,human,ATACseq,SRR5444787,SRX2733842,single,SRA_1,
+melanoma_11,melanoma,11,melanoma,WM989 cell line,,human,ATACseq,SRR5444786,SRX2733841,single,SRA_1,
+melanoma_12,melanoma,12,melanoma,WM989 cell line,,human,ATACseq,SRR5444785,SRX2733840,single,SRA_1,
+melanoma_13,melanoma,13,melanoma,WM989 cell line,,human,ATACseq,SRR5444784,SRX2733839,single,SRA_1,
+melanoma_14,melanoma,14,melanoma,WM989 cell line,,human,ATACseq,SRR5444783,SRX2733838,single,SRA_1,
+melanoma_15,melanoma,15,melanoma,WM989 cell line,,human,ATACseq,SRR5444782,SRX2733837,single,SRA_1,
+melanoma_16,melanoma,16,melanoma,WM989 cell line,,human,ATACseq,SRR5444781,SRX2733836,single,SRA_1,
+melanoma_17,melanoma,17,melanoma,WM989 cell line,,human,ATACseq,SRR5444780,SRX2733835,single,SRA_1,
+melanoma_18,melanoma,18,melanoma (BRAF metastatic),cell culture,,human,ATACseq,SRR6950062,SRX3893513,paired,SRA_1,SRA_2
+melanoma_19,melanoma,19,melanoma (BRAF metastatic),cell culture,,human,ATACseq,SRR6950063,SRX3893514,paired,SRA_1,SRA_2
+melanoma_20,melanoma,20,melanoma (BRAF metastatic),cell culture,,human,ATACseq,SRR6950070,SRX3893522,paired,SRA_1,SRA_2
+MEP_1,healthy,1,healthy,megakaryocyte erythroid progenitor cell,,human,ATACseq,SRR2920541,SRX1427864,paired,SRA_1,SRA_2
+MEP_2,healthy,2,healthy,megakaryocyte erythroid progenitor cell,,human,ATACseq,SRR2920540,SRX1427863,paired,SRA_1,SRA_2
+MEP_3,healthy,3,healthy,megakaryocyte erythroid progenitor cell,,human,ATACseq,SRR2920508,SRX1427831,paired,SRA_1,SRA_2
+MEP_4,healthy,4,healthy,megakaryocyte erythroid progenitor cell,,human,ATACseq,SRR2920486,SRX1427809,paired,SRA_1,SRA_2
+MEP_5,healthy,5,healthy,megakaryocyte erythroid progenitor cell,,human,ATACseq,SRR2920485,SRX1427808,paired,SRA_1,SRA_2
+MEP_6,healthy,6,healthy,megakaryocyte erythroid progenitor cell,,human,ATACseq,SRR2920474,SRX1427797,paired,SRA_1,SRA_2
+MEP_7,healthy,7,healthy,megakaryocyte erythroid progenitor cell,,human,ATACseq,SRR2920473,SRX1427796,paired,SRA_1,SRA_2
+monocyte_1,healthy,1,healthy,Monocyte,,human,ATACseq,SRR3986122,SRX1988140,paired,SRA_1,SRA_2
+monocyte_2,healthy,2,healthy,Monocyte,,human,ATACseq,SRR3986123,SRX1988141,paired,SRA_1,SRA_2
+monocyte_3,healthy,3,healthy,Monocyte,,human,ATACseq,SRR3986125,SRX1988143,paired,SRA_1,SRA_2
+monocyte_4,healthy,4,healthy,Monocyte,,human,ATACseq,SRR3986151,SRX1988169,paired,SRA_1,SRA_2
+monocyte_5,healthy,5,healthy,Monocyte,,human,ATACseq,SRR3986152,SRX1988170,paired,SRA_1,SRA_2
+monocyte_6,healthy,6,healthy,Monocyte,,human,ATACseq,SRR3986153,SRX1988171,paired,SRA_1,SRA_2
+monocyte_7,healthy,7,healthy,Monocyte,,human,ATACseq,SRR3986154,SRX1988172,paired,SRA_1,SRA_2
+monocyte_8,healthy,8,healthy,Monocyte,,human,ATACseq,SRR3986157,SRX1988175,paired,SRA_1,SRA_2
+monocyte_9,healthy,9,healthy,Monocyte,,human,ATACseq,SRR3986158,SRX1988176,paired,SRA_1,SRA_2
+monocyte_10,healthy,10,healthy,Monocyte,,human,ATACseq,SRR3986159,SRX1988177,paired,SRA_1,SRA_2
+monocyte_11,healthy,11,healthy,Monocyte,,human,ATACseq,SRR3986160,SRX1988178,paired,SRA_1,SRA_2
+monocyte_12,healthy,12,healthy,Monocyte,,human,ATACseq,SRR3986161,SRX1988179,paired,SRA_1,SRA_2
+monocyte_13,healthy,13,healthy,Monocyte,,human,ATACseq,SRR3986163,SRX1988181,paired,SRA_1,SRA_2
+monocyte_14,healthy,14,healthy,Monocyte,,human,ATACseq,SRR3986164,SRX1988182,paired,SRA_1,SRA_2
+monocyte_15,healthy,15,healthy,Monocyte,,human,ATACseq,SRR3986166,SRX1988184,paired,SRA_1,SRA_2
+MPC_1,healthy,1,healthy,multipotent progenitor cell,,human,ATACseq,SRR2920534,SRX1427857,paired,SRA_1,SRA_2
+MPC_2,healthy,2,healthy,multipotent progenitor cell,,human,ATACseq,SRR2920533,SRX1427856,paired,SRA_1,SRA_2
+MPC_3,healthy,3,healthy,multipotent progenitor cell,,human,ATACseq,SRR2920510,SRX1427833,paired,SRA_1,SRA_2
+MPC_4,healthy,4,healthy,multipotent progenitor cell,,human,ATACseq,SRR2920509,SRX1427832,paired,SRA_1,SRA_2
+MPC_5,healthy,5,healthy,multipotent progenitor cell,,human,ATACseq,SRR2920479,SRX1427802,paired,SRA_1,SRA_2
+MPC_6,healthy,6,healthy,multipotent progenitor cell,,human,ATACseq,SRR2920467,SRX1427790,paired,SRA_1,SRA_2
+NB_1,NB,1,neuroblastoma,Kelly,,human,ATACseq,SRR5249477,SRX2555312,paired,SRA_1,SRA_2
+NB_2,NB,2,neuroblastoma,BE2C,,human,ATACseq,SRR5249476,SRX2555311,paired,SRA_1,SRA_2
+NB_3,NB,3,neuroblastoma,Multiple Myeloma,,human,ATACseq,SRR3356451,SRX1690252,paired,SRA_1,SRA_2
+NB_4,NB,4,neuroblastoma,Neuroblastoma,,human,ATACseq,SRR3356450,SRX1690251,paired,SRA_1,SRA_2
+NB_5,NB,5,neuroblastoma,Neuroblastoma,,human,ATACseq,SRR3356449,SRX1690250,paired,SRA_1,SRA_2
+NB_6,NB,6,neuroblastoma,Neuroblastoma,,human,ATACseq,SRR3356448,SRX1690249,paired,SRA_1,SRA_2
+NB_7,NB,7,neuroblastoma,Neuroblastoma,,human,ATACseq,SRR3356447,SRX1690248,paired,SRA_1,SRA_2
+OS_2,OS,2,osteosarcoma,osteosarcoma cell line,,human,ATACseq,SRR7699133,SRX4557416,paired,SRA_1,SRA_2
+OS_3,OS,3,osteosarcoma,osteosarcoma cell line,,human,ATACseq,SRR7699132,SRX4557415,paired,SRA_1,SRA_2
+OS_4,OS,4,osteosarcoma,osteosarcoma cell line,,human,ATACseq,SRR7699131,SRX4557414,paired,SRA_1,SRA_2
+OS_5,OS,5,osteosarcoma,osteosarcoma cell line,,human,ATACseq,SRR7699130,SRX4557413,paired,SRA_1,SRA_2
+NSCLC_1,NSCLC,1,lung cancer,transformed bronchial epithelial,,human,ATACseq,SRR7651674,SRX4514439,paired,SRA_1,SRA_2
+NSCLC_2,NSCLC,2,lung cancer,transformed bronchial epithelial,,human,ATACseq,SRR7651673,SRX4514438,paired,SRA_1,SRA_2
+NSCLC_3,NSCLC,3,lung cancer,transformed bronchial epithelial,,human,ATACseq,SRR7651672,SRX4514437,paired,SRA_1,SRA_2
+NSCLC_4,NSCLC,4,lung cancer,transformed bronchial epithelial,,human,ATACseq,SRR7651671,SRX4514436,paired,SRA_1,SRA_2
+NSCLC_5,NSCLC,5,lung cancer,transformed bronchial epithelial,,human,ATACseq,SRR7651670,SRX4514435,paired,SRA_1,SRA_2
+NSCLC_6,NSCLC,6,lung cancer,NSCLC,,human,ATACseq,SRR2927089,SRX1425825,paired,SRA_1,SRA_2
+NSCLC_7,NSCLC,7,lung cancer,NSCLC,,human,ATACseq,SRR2927087,SRX1425823,paired,SRA_1,SRA_2
+NSCLC_8,NSCLC,8,lung cancer,NSCLC,,human,ATACseq,SRR2927084,SRX1425820,paired,SRA_1,SRA_2
+NSCLC_9,NSCLC,9,lung cancer,NSCLC,,human,ATACseq,SRR5800668,SRX2980135,paired,SRA_1,SRA_2
+NSCLC_10,NSCLC,10,lung cancer,NSCLC,,human,ATACseq,SRR5800667,SRX2980134,paired,SRA_1,SRA_2
+NSCLC_11,NSCLC,11,lung cancer,NSCLC,,human,ATACseq,SRR5800666,SRX2980133,paired,SRA_1,SRA_2
+NSCLC_12,NSCLC,12,lung cancer,NSCLC,,human,ATACseq,SRR5800665,SRX2980132,paired,SRA_1,SRA_2
+NSCLC_13,NSCLC,13,lung cancer,NSCLC,,human,ATACseq,SRR5800659,SRX2980126,paired,SRA_1,SRA_2
+NSCLC_14,NSCLC,14,lung cancer,NSCLC,,human,ATACseq,SRR5800658,SRX2980125,paired,SRA_1,SRA_2
+NSCLC_15,NSCLC,15,lung cancer,NSCLC,,human,ATACseq,SRR5800657,SRX2980124,paired,SRA_1,SRA_2
+pancreas_1,healthy,1,healthy,pancreatic control cells,,human,ATACseq,SRR5376214,SRX2671585,paired,SRA_1,SRA_2
+pancreas_acinar_1,pancreas,1,healthy,acinar,,human,ATACseq,SRR3337425,SRX1681497,paired,SRA_1,SRA_2
+pancreas_acinar_2,pancreas,2,healthy,acinar,,human,ATACseq,SRR3337420,SRX1681492,paired,SRA_1,SRA_2
+pancreas_acinar_3,pancreas,3,healthy,acinar,,human,ATACseq,SRR3337417,SRX1681489,paired,SRA_1,SRA_2
+pancreas_alpha_1,pancreas,1,healthy,alpha,,human,ATACseq,SRR3337426,SRX1681498,paired,SRA_1,SRA_2
+pancreas_alpha_2,pancreas,2,healthy,alpha,,human,ATACseq,SRR3337418,SRX1681490,paired,SRA_1,SRA_2
+pancreas_alpha_3,pancreas,3,healthy,alpha,,human,ATACseq,SRR3337415,SRX1681487,paired,SRA_1,SRA_2
+pancreas_beta_1,pancreas,1,healthy,beta,,human,ATACseq,SRR3337427,SRX1681499,paired,SRA_1,SRA_2
+pancreas_beta_2,pancreas,2,healthy,beta,,human,ATACseq,SRR3337424,SRX1681496,paired,SRA_1,SRA_2
+pancreas_beta_3,pancreas,3,healthy,beta,,human,ATACseq,SRR3337419,SRX1681491,paired,SRA_1,SRA_2
+pancreas_beta_4,pancreas,4,healthy,beta,,human,ATACseq,SRR3337416,SRX1681488,paired,SRA_1,SRA_2
+pancreas_duct_1,pancreas,1,healthy,duct,,human,ATACseq,SRR3337429,SRX1681501,paired,SRA_1,SRA_2
+pancreas_duct_2,pancreas,2,healthy,duct,,human,ATACseq,SRR3337428,SRX1681500,paired,SRA_1,SRA_2
+pancreas_duct_3,pancreas,3,healthy,duct,,human,ATACseq,SRR3337421,SRX1681493,paired,SRA_1,SRA_2
+pancreas_duct_4,pancreas,4,healthy,duct,,human,ATACseq,SRR3337422,SRX1681494,paired,SRA_1,SRA_2
+pDC_1,healthy,1,healthy,pDCs Donor-1 - Plasmacytoid dendritic cell,,human,ATACseq,SRR3932758,SRX1962078,paired,SRA_1,SRA_2
+pDC_2,healthy,2,healthy,pDCs Donor-1 - Plasmacytoid dendritic cell,,human,ATACseq,SRR3932760,SRX1962080,paired,SRA_1,SRA_2
+prostate_1,healthy,1,healthy,normal prostate basal epithelial,,human,ATACseq,SRR7651662,SRX4514427,paired,SRA_1,SRA_2
+prostate_2,healthy,2,healthy,normal prostate basal epithelial,,human,ATACseq,SRR7651661,SRX4514426,paired,SRA_1,SRA_2
+prostate_3,healthy,3,healthy,normal prostate basal epithelial,,human,ATACseq,SRR7651660,SRX4514425,paired,SRA_1,SRA_2
+prostate_cancer_10,prostate,10,prostate cancer,22RV1,,human,ATACseq,SRR6933113,SRX3878323,paired,SRA_1,SRA_2
+prostate_cancer_11,prostate,11,prostate cancer,22RV1,,human,ATACseq,SRR6933114,SRX3878324,paired,SRA_1,SRA_2
+prostate_cancer_12,prostate,12,prostate cancer,LN95,,human,ATACseq,SRR6933115,SRX3878325,paired,SRA_1,SRA_2
+prostate_cancer_13,prostate,13,prostate cancer,LN95,,human,ATACseq,SRR6933116,SRX3878326,paired,SRA_1,SRA_2
+prostate_cancer_14,prostate,14,prostate cancer (small cell),small cell prostate cancer,,human,ATACseq,SRR7651676,SRX4514441,paired,SRA_1,SRA_2
+prostate_cancer_15,prostate,15,prostate cancer (small cell),small cell prostate cancer,,human,ATACseq,SRR7651675,SRX4514440,paired,SRA_1,SRA_2
+prostate_cancer_1,prostate,1,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651686,SRX4514451,paired,SRA_1,SRA_2
+prostate_cancer_2,prostate,2,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651685,SRX4514450,paired,SRA_1,SRA_2
+prostate_cancer_3,prostate,3,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651684,SRX4514449,paired,SRA_1,SRA_2
+prostate_cancer_4,prostate,4,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651683,SRX4514448,paired,SRA_1,SRA_2
+prostate_cancer_5,prostate,5,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651677,SRX4514442,paired,SRA_1,SRA_2
+prostate_cancer_6,prostate,6,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651669,SRX4514434,paired,SRA_1,SRA_2
+prostate_cancer_7,prostate,7,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651668,SRX4514433,paired,SRA_1,SRA_2
+prostate_cancer_8,prostate,8,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651667,SRX4514432,paired,SRA_1,SRA_2
+prostate_cancer_9,prostate,9,prostate,transformed prostate basal epithelial,,human,ATACseq,SRR7651666,SRX4514431,paired,SRA_1,SRA_2
+RCC_1,RCC,1,renal cell carcinoma,clear cell renal cell carcinoma cell line A-704,,human,ATACseq,SRR5944292,SRX3102752,single,SRA_1,
+RCC_2,RCC,2,renal cell carcinoma,clear cell renal cell carcinoma cell line A-704,,human,ATACseq,SRR5944290,SRX3102750,single,SRA_1,
+RCC_3,RCC,3,renal cell carcinoma,clear cell renal cell carcinoma cell line A-704,,human,ATACseq,SRR5944287,SRX3102747,single,SRA_1,
+RCC_4,RCC,4,renal cell carcinoma,clear cell renal cell carcinoma cell line A-704,,human,ATACseq,SRR5944284,SRX3102744,single,SRA_1,
+RCC_5,RCC,5,renal cell carcinoma,clear cell renal cell carcinoma cell line 786-O,,human,ATACseq,SRR5944275,SRX3102741,paired,SRA_1,SRA_2
+RCC_6,RCC,6,renal cell carcinoma,clear cell renal cell carcinoma cell line 786-O,,human,ATACseq,SRR5944274,SRX3102741,paired,SRA_1,SRA_2
+RCC_7,RCC,7,renal cell carcinoma,clear cell renal cell carcinoma cell line 786-O,,human,ATACseq,SRR5944273,SRX3102741,paired,SRA_1,SRA_2
+RCC_8,RCC,8,renal cell carcinoma,clear cell renal cell carcinoma cell line 786-O,,human,ATACseq,SRR5944272,SRX3102741,paired,SRA_1,SRA_2
+SCLC_1,SCLC,1,lung cancer (small cell),small cell lung cancer,,human,ATACseq,SRR7651691,SRX4514456,paired,SRA_1,SRA_2
+SCLC_2,SCLC,2,lung cancer (small cell),small cell lung cancer,,human,ATACseq,SRR7651690,SRX4514455,paired,SRA_1,SRA_2
+SCLC_3,SCLC,3,lung cancer (small cell),small cell lung cancer,,human,ATACseq,SRR7651689,SRX4514454,paired,SRA_1,SRA_2
+SCLC_4,SCLC,4,lung cancer (small cell),small cell lung cancer,,human,ATACseq,SRR7651688,SRX4514453,paired,SRA_1,SRA_2
+SCLC_5,SCLC,5,lung cancer (small cell),small cell lung cancer,,human,ATACseq,SRR7651687,SRX4514452,paired,SRA_1,SRA_2
+SCLC_6,SCLC,6,lung cancer (small cell),cell line,,human,ATACseq,SRR3493642,SRX1753559,paired,SRA_1,SRA_2
+SCLC_7,SCLC,7,lung cancer (small cell),cell line,,human,ATACseq,SRR3493643,SRX1753559,paired,SRA_1,SRA_2
+SCLC_8,SCLC,8,lung cancer (small cell),cell line,,human,ATACseq,SRR3493644,SRX1753560,paired,SRA_1,SRA_2
+SCLC_9,SCLC,9,lung cancer (small cell),cell line,,human,ATACseq,SRR3493645,SRX1753560,paired,SRA_1,SRA_2
+SCLC_10,SCLC,10,lung cancer (small cell),cell line,,human,ATACseq,SRR3493646,SRX1753561,paired,SRA_1,SRA_2
+SCLC_11,SCLC,11,lung cancer (small cell),cell line,,human,ATACseq,SRR3493647,SRX1753561,paired,SRA_1,SRA_2
+SCLC_12,SCLC,12,lung cancer (small cell),cell line,,human,ATACseq,SRR3493648,SRX1753562,paired,SRA_1,SRA_2
+SCLC_13,SCLC,13,lung cancer (small cell),cell line,,human,ATACseq,SRR3493650,SRX1753563,paired,SRA_1,SRA_2
+SCLC_14,SCLC,14,lung cancer (small cell),cell line,,human,ATACseq,SRR3493656,SRX1753566,paired,SRA_1,SRA_2
+SCLC_15,SCLC,15,lung cancer (small cell),cell line,,human,ATACseq,SRR3493657,SRX1753566,paired,SRA_1,SRA_2
+synovial_sarcoma_1,synovial_sarcoma,1,synovial sarcoma,Aska-Del47 shCt ATAC-seq,,human,ATACseq,SRR7167356,SRX4085327,paired,SRA_1,SRA_2
+synovial_sarcoma_2,synovial_sarcoma,2,synovial sarcoma,Aska-Del47 shCt ATAC-seq,,human,ATACseq,SRR7167355,SRX4085326,paired,SRA_1,SRA_2
+synovial_sarcoma_3,synovial_sarcoma,3,synovial sarcoma,Aska shCt ATAC-seq,,human,ATACseq,SRR7167352,SRX4085323,paired,SRA_1,SRA_2
+synovial_sarcoma_4,synovial_sarcoma,4,synovial sarcoma,Aska shCt ATAC-seq,,human,ATACseq,SRR7167351,SRX4085322,paired,SRA_1,SRA_2
+t_cell_1,healthy,1,healthy,Naïve T cell,,human,ATACseq,SRR4204927,SRX2148900,paired,SRA_1,SRA_2
+t_cell_2,healthy,2,healthy,Naïve T cell,,human,ATACseq,SRR4204926,SRX2148899,paired,SRA_1,SRA_2
+t_cell_3,healthy,3,healthy,Naïve T cell,,human,ATACseq,SRR4204925,SRX2148898,paired,SRA_1,SRA_2
+t_cell_4,healthy,4,healthy,Naïve T cell,,human,ATACseq,SRR4204924,SRX2148897,paired,SRA_1,SRA_2
+t_cell_5,healthy,5,healthy,Naïve T primary cell,,human,ATACseq,SRR5831532,SRX3008838,paired,SRA_1,SRA_2
+t_cell_6,healthy,6,healthy,Naïve T primary cell,,human,ATACseq,SRR5831531,SRX3008837,paired,SRA_1,SRA_2
+t_cell_7,healthy,7,healthy,Naïve T primary cell,,human,ATACseq,SRR5831518,SRX3008824,paired,SRA_1,SRA_2
+t_cell_8,healthy,8,healthy,Naïve T primary cell,,human,ATACseq,SRR5831517,SRX3008823,paired,SRA_1,SRA_2
+t_cell_9,healthy,9,healthy,Naïve T primary cell,,human,ATACseq,SRR5831516,SRX3008822,paired,SRA_1,SRA_2
+t_cell_10,healthy,10,healthy,Naïve T primary cell,,human,ATACseq,SRR5831515,SRX3008821,paired,SRA_1,SRA_2
+t_cell_11,healthy,11,healthy,Naïve T primary cell,,human,ATACseq,SRR5831514,SRX3008820,paired,SRA_1,SRA_2
+t_cell_12,healthy,12,healthy,Naïve T primary cell,,human,ATACseq,SRR5831513,SRX3008819,paired,SRA_1,SRA_2
+th1_1,healthy,1,healthy,Th1 cell,,human,ATACseq,SRR4204930,SRX2148903,paired,SRA_1,SRA_2
+th1_2,healthy,2,healthy,Th1 cell,,human,ATACseq,SRR4204929,SRX2148902,paired,SRA_1,SRA_2
+th1_3,healthy,3,healthy,Th1 cell,,human,ATACseq,SRR4204928,SRX2148901,paired,SRA_1,SRA_2
+th17_1,healthy,1,healthy,Th17 cell,,human,ATACseq,SRR4204936,SRX2148909,paired,SRA_1,SRA_2
+th17_2,healthy,2,healthy,Th17 cell,,human,ATACseq,SRR4204935,SRX2148908,paired,SRA_1,SRA_2
+th17_3,healthy,3,healthy,Th17 cell,,human,ATACseq,SRR4204934,SRX2148907,paired,SRA_1,SRA_2
+th17_4,healthy,4,healthy,Th17 primary cell,,human,ATACseq,SRR5831534,SRX3008840,paired,SRA_1,SRA_2
+th17_5,healthy,5,healthy,Th17 primary cell,,human,ATACseq,SRR5831533,SRX3008839,paired,SRA_1,SRA_2
+th17_6,healthy,6,healthy,Th17 primary cell,,human,ATACseq,SRR5831524,SRX3008830,paired,SRA_1,SRA_2
+th17_7,healthy,7,healthy,Th17 primary cell,,human,ATACseq,SRR5831523,SRX3008829,paired,SRA_1,SRA_2
+th17_8,healthy,8,healthy,Th17 primary cell,,human,ATACseq,SRR5831522,SRX3008828,paired,SRA_1,SRA_2
+th17_9,healthy,9,healthy,Th17 primary cell,,human,ATACseq,SRR5831521,SRX3008827,paired,SRA_1,SRA_2
+th17_10,healthy,10,healthy,Th17 primary cell,,human,ATACseq,SRR5831520,SRX3008826,paired,SRA_1,SRA_2
+th17_11,healthy,11,healthy,Th17 primary cell,,human,ATACseq,SRR5831519,SRX3008825,paired,SRA_1,SRA_2
+th2_1,healthy,1,healthy,Th2 cell,,human,ATACseq,SRR4204933,SRX2148906,paired,SRA_1,SRA_2
+th2_2,healthy,2,healthy,Th2 cell,,human,ATACseq,SRR4204932,SRX2148905,paired,SRA_1,SRA_2
+th2_3,healthy,3,healthy,Th2 cell,,human,ATACseq,SRR4204931,SRX2148904,paired,SRA_1,SRA_2
+treg_1,healthy,1,healthy,Treg cell,,human,ATACseq,SRR4204938,SRX2148911,paired,SRA_1,SRA_2
+treg_2,healthy,2,healthy,Treg cell,,human,ATACseq,SRR4204937,SRX2148910,paired,SRA_1,SRA_2
+treg_3,healthy,3,healthy,Treg primary cell,,human,ATACseq,SRR5831536,SRX3008842,paired,SRA_1,SRA_2
+treg_4,healthy,4,healthy,Treg primary cell,,human,ATACseq,SRR5831535,SRX3008841,paired,SRA_1,SRA_2
+treg_5,healthy,5,healthy,Treg primary cell,,human,ATACseq,SRR5831530,SRX3008836,paired,SRA_1,SRA_2
+treg_6,healthy,6,healthy,Treg primary cell,,human,ATACseq,SRR5831529,SRX3008835,paired,SRA_1,SRA_2
+treg_7,healthy,7,healthy,Treg primary cell,,human,ATACseq,SRR5831528,SRX3008834,paired,SRA_1,SRA_2
+treg_8,healthy,8,healthy,Treg primary cell,,human,ATACseq,SRR5831527,SRX3008833,paired,SRA_1,SRA_2
+treg_9,healthy,9,healthy,Treg primary cell,,human,ATACseq,SRR5831526,SRX3008832,paired,SRA_1,SRA_2
+treg_10,healthy,10,healthy,Treg primary cell,,human,ATACseq,SRR5831525,SRX3008831,paired,SRA_1,SRA_2

@@ -8,7 +8,7 @@ looper:
 
 sample_modifiers:
   append:
-    pipeline_interfaces: $CODE/pepatac/pipeline_interface.yaml
+    pipeline_interfaces: $CODE/pepatac/sample_pipeline_interface.yaml
   derive:
     attributes: [read1, read2]
     sources:
